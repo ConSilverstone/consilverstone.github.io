@@ -1,0 +1,72 @@
+.banner {
+	background-color: black;
+	text-align: center;
+	color: white;
+}
+
+.wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	font-weight: bold;
+	text-align: center;
+	}
+
+.wrapper > * {
+	padding: 10px;
+	flex: 1 100%;
+	}
+
+.header {
+	background: tomato;
+	padding: 10px
+	}
+
+.banded-div {
+	background: lightgreen;
+	}
+
+.main {
+	text-align: left;
+	background: deepskyblue;
+	}
+
+.aside-1 {
+	min-width: 100px;
+	max-width: 200px;
+	background: black;
+	color: red;
+	}
+
+@media all and (min-width: 600px) {
+	.aside {flex: 1 0 0;}
+	}
+	
+@media all and (min-width: 800px) {
+	.main {flex: 3 0PX;}
+	.aside-1 {order: 1;}
+	.main {order: 2;}
+	.banded-div {order: 4;}
+}
+
+.contentNav {
+	position:fixed ;
+	text-align: center;
+}
+
+.contentNav a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	color: lightblue;
+	display: block;
+}
+
+.contentNav a:hover {
+	color: blue;
+}
+
+body {
+	padding: 2em;
+}
+
+}
