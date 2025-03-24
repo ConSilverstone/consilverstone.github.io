@@ -21,6 +21,7 @@
 	padding: 10px
 	}
 
+
 .banded-div {
 	background: lightgreen;
 	}
@@ -30,12 +31,56 @@
 	background: deepskyblue;
 	}
 
+.main-email {
+	text-align: left;
+	}
+
 .aside-1 {
 	min-width: 100px;
 	max-width: 200px;
 	background: black;
 	color: red;
 	}
+
+.aside-email {
+	min-width: 10%;
+	max-width: 100%;
+	margin-left: auto;
+}
+
+.email-box {
+	border: 1px solid black;
+	background-color: white;
+	padding: 10px;
+	margin: 10px;
+}
+
+.button-cont {
+	text-align: center;
+}
+
+/* adapted from w3 schools https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button3 */
+.button {
+	border: none;
+	color: rgba(163, 163, 163, 0.322);
+	padding: 18px 32px;
+	text-align: center;
+	display: inline-block;
+	font-size: 14px;
+	margin: 6px 3px;
+	cursor: pointer;
+  }
+
+  .button2 {
+	background-color: rgba(0, 0, 0, 0.349); 
+	color: black; 
+	border: 2px solid #010b0e00;
+  }
+  
+  .button2:hover {
+	background-color: #0000001e;
+	color: rgb(0, 0, 0);
+  }
 
 @media all and (min-width: 600px) {
 	.aside {flex: 1 0 0;}
@@ -47,6 +92,13 @@
 	.main {order: 2;}
 	.banded-div {order: 4;}
 }
+
+@media all and (min-width: 800px) {
+	.main-email {flex: 3 ;}
+	.aside-email {flex: 1;}
+	.main-email {order: 2;}
+	.banded-div {order: 4;}
+	}
 
 .contentNav {
 	position:fixed ;
@@ -69,4 +121,4 @@ body {
 	padding: 2em;
 }
 
-}
+

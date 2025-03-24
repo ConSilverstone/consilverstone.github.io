@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+    <title>You've got mail!</title>
+    <link rel="stylesheet" href="./static/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="icon" type="image/png" href="./media/phishingicon.png">
+</head>
+<body>
+<div class="banner">
+	<h1>You've Got Mail!</h1>
+	<h3>The online phishing minigame.</h3>
+</div>
+<!-- 98.css upper tabs -->
+<div class="window-body">
+    <menu role="tablist" class="multirows">
+      <li role="tab"><a href="#tabs">Tutorial</a></li>
+      <li role="tab"><a href="#tabs">examples</a></li>
+      <li role="tab"><a href="#tabs">scoreboard</a></li>
+    </menu>
+    <div class="window" role="tabpanel">
+      <div class="window-body">
+        	
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+
+    <!-- main email body-->
+    <article class="main-email">
+      <div class="window" style="width: 100%">
+        <div class="title-bar">
+          <div class="title-bar-text">Need credentials</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+        <!-- email content-->
+      <div class="email-box">
+        <div class="email-header">
+          <div class="email-header-from">From: <span>ITsupport@macrosift.com</span></div>
+          <div class="email-header-to">To: <span>Employee</span></div>
+          <div class="email-header-date">Date: <span>Today</span></div>
+        </div>
+        <div class="email-body">
+          <p>Dear User,</p>
+          <p>We need to check your password as it may have been in a data breach, please send it to me.</p>
+          <p>Please do so urgently.</p>
+          <p>IT</p>
+        </div> 
+      </div>
+
+    </article>
+
+      <!--Aside box table is integrated-->
+
+    <aside class="aside aside-email">
+      <div class="sunken-panel" style="height: 100%; width: 100%;">
+        <table class="interactive">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Subject</th>
+              <th>read</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><a href="email.html">Need credentials</a></td>
+              <td>☑</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>PLACEHOLDER EMAIL</td>
+              <td>☑</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>PLACEHOLDER EMAIL</td>
+              <td>☑</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>PLACEHOLDER EMAIL</td>
+              <td>☑</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>PLACEHOLDER EMAIL</td>
+              <td>☑</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>PLACEHOLDER EMAIL</td>
+              <td>☑</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </aside>
+  </div>
+
+  <!-- button-->
+  <div class="button-cont">
+    <button class="button button2">smells phishy!</button>
+    <button class="button button2">A OK!</button>
+  </div>">
+  
+  <script>
+    document.querySelectorAll('table.interactive').forEach(element => {
+      element.addEventListener('click', (event) => {
+        const highlightedClass = 'highlighted';
+        const isRow = element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
+        const newlySelectedRow = event.composedPath().find(isRow);
+        const previouslySelectedRow = Array.from(newlySelectedRow.parentElement.children).filter(isRow).find(element => element.classList.contains(highlightedClass));
+        if(previouslySelectedRow){
+          previouslySelectedRow.classList.toggle(highlightedClass);
+        }
+  
+        if (newlySelectedRow) {
+          newlySelectedRow.classList.toggle(highlightedClass);
+        }
+      })
+    });
+  </script>
+</body>
+</html>
