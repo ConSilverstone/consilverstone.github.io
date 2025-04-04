@@ -1,67 +1,95 @@
 <!DOCTYPE html>
 
 <html lang="en-GB">
+
 <head>
-    <title>You've got mail!</title>
-    <link rel="stylesheet" href="./static/main.css">
-    <!-- Windows 98 creation source: https://jdan.github.io/98.css/ -->
-    <link rel="stylesheet" href="https://unpkg.com/98.css">
-    <link rel="icon" type="image/png" href="./media/phishingicon.png">
+	<title>You've got mail!</title>
+	<!-- Windows 98 creation source: https://jdan.github.io/98.css/ -->
+	<!-- This is the more general layout while main make specific changes per page -->
+	<link rel="stylesheet" href="./static/style.css">
+	<link rel="stylesheet" href="./static/main.css">
+	<link rel="icon" type="image/png" href="./media/phishingicon.png">
 </head>
 
 
 <body>
-    <!-- Top Page Banner -->
-    <div class="window">
-        <div class="title-bar">
-            <div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
-            	<h1>You've got mail!</h1>
-            </div>
-        </div>
-        <div class="window-body">
-            <p>The online phishing minigame.</p>
-        </div>
-    </div>
 
-    <!-- Start of html content -->
-    <div class="window-body">
-	<menu role="tablist" class="multirows">		
-		<li role="tab"><a href="index.html">Home</a></li>
-		<li role="tab"><a href="tutorial.html">Tutorial</a></li>
-		<li role="tab"><a href="email.html">Play</a></li>
-		<li role="tab"><a href="scoreboard.html">Scoreboard</a></li>
-	</menu>
-	<div class="window" role="tabpanel">
-          <div class="window-body">	
-          </div>
-        </div>
-     </div>
-     
-     <div class="wrapper">
-	<article class="main">
-		<header id="opening-title">Welcome to You've got mail!</header>
-		<p>Test your understanding of online danger with this threat assessment game, you will be given a snapshot of an email list belonging to John Smith. 
-		Read the context below carefully to identify what might be an unusual message to recieve. If you are yet to play view the tutorial first before proceeding.<br></p>
-		<header id="next-title">Context</header>
-		<p>Hello John, thank you for joining the sales team for Superauto&trade. We are super exicited to have you! Make sure you are ready to start for the 10th of september at 9am. 
-		<b>With the growing Y2K concerns</b> we have recently updated our email system. Since your email is all set up during this process you will of recieved a backlog of emails. I have been informed 
-		that you have recieved the online safety briefing but to reiterate read carefully and report anything unusual to the computing team. You will have the morning to do so before being given 
-		duties expected of your role. <br><br>
+	<!-- Top Page Banner -->
+	<div class="window">
+		<div class="title-bar">
+			<div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
+				<h1>You've got mail!</h1>
+			</div>
+		</div>
+		<div class="window-body">
+			<p>The online phishing minigame.</p>
+		</div>
+	</div>
 
-		Look forward to working with you, <br>
-		&nbsp; - Supervisor Greenie
-		</p>
-	</article>
+	<!-- Start of html content -->
+	<div class="window-body">
+		<menu role="tablist" class="multirows">
+			<li role="tab"><a href="index.html">Home</a></li>
+			<li role="tab"><a href="tutorial.html">Tutorial</a></li>
+			<li role="tab"><a href="email.html">Play</a></li>
+			<li role="tab"><a href="scoreboard.html">Scoreboard</a></li>
+		</menu>
+
+		<div class="window" role="tabpanel">
+			<div class="window-body">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<article class="main">
+			<header id="opening-title">Welcome to You've got mail!</header>
+
+			<!--
+				Page load will play mp3 file once.
+				Autoplay does not work for chrome.
+				If it does not load correctly display an error message.
+			-->
+			<audio controls autoplay>
+				<source src="./media/youGotmail.mp3" type="audio/mpeg">
+				Your browser does not support this audio element. <!--Error Message-->
+			</audio>
+
+			<p>
+				Test your understanding of online danger with this threat assessment game, you will be given a snapshot of an email list belonging to John Smith.
+				Read the context below carefully to identify what might be an unusual message to recieve. If you are yet to play view the tutorial first before proceeding.<br>
+			</p>
+			<header id="next-title">Context</header>
+			<p>
+				Hello John, thank you for joining the sales team for Superauto&trade. We are super exicited to have you! Make sure you are ready to start for the 10th of september at 9am.
+				<b>With the growing Y2K concerns</b> we have recently updated our email system. Since your email is all set up during this process you will of recieved a backlog of emails. I have been informed
+				that you have recieved the online safety briefing but to reiterate read carefully and report anything unusual to the computing team. You will have the morning to do so before being given
+				duties expected of your role. <br><br>
+
+				Look forward to working with you, <br>
+				<!--&nbsp; acts as a tab character-->
+				&nbsp; - Supervisor Greenie
+			</p>
+		</article>
 		<aside class="aside aside-1">
-	    			<div class="contentNav">
-	    				<h2>Content</h2>
-       					<a href="#opening-title">Welcome</a>
-       					<a href="#next-title">Context</a>
-       				</div>
+			<div class="title-bar">
+				<div class="title-bar-text">Content</div>
+				<div class="title-bar-controls">
+					<button aria-label="Minimize"></button>
+					<button aria-label="Maximize"></button>
+					<button aria-label="Close"></button>
+				</div>
+			</div>
+			<ul class="window" style="list-style-type: none;">
+				<li><h3><a href="#opening-title">Welcome</a></h3></li>
+				<li><h3><a href="#next-title">Context</a></h3></li>
+				<li><h3><a href="#next-title">Context 2</a></h3></li>
+			</ul>
 		</aside>
 		<footer class="banded-div">
-	    		<a href="sources.html">Attribution</a>
-  	    		<a href="team.html">Credits</a>
+			<a href="sources.html">Attribution</a>
+			<a href="team.html">Credits</a>
 		</footer>
 	</div>
 </body>
