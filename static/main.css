@@ -39,6 +39,7 @@
 	max-width: 250px;
 	background: black;
 	color: red;
+	flex: 1; /* Take up the space you need vertically to display text */
 	}
 
 @media all and (min-width: 600px) {
@@ -59,25 +60,21 @@
 	.banded-div {order: 4;}
 	}
 
-.contentNav {
-	position:fixed ;
-	text-align: center;
-}
-
-.contentNav a {
-	padding: 6px 8px 6px 16px;
-	text-decoration: none;
-	font-size: 25px;
-	color: lightblue;
-	display: block;
-}
-
-.contentNav a:hover {
-	color: blue;
-}
-
 body {
+	/* Let make a custom public domain cursor for the website. 
+	We need to backtrack out of this directory "../" and into media to find the .cur file.
+	In case of failure to load mouse use computer default.
+	*/
+	cursor: url("../media/Original black custom - normal select.cur"), default;
+	/* Make the display change with the window size */
+	display: flex;
+	/* If it must be reshaped elongate it across y-axis */
+	flex-direction: column;
 	padding: 2em;
+}
+
+footer {
+	margin-top: auto;
 }
 
 
