@@ -237,10 +237,15 @@ a {
 }
 
 .title-bar-controls button {
-  padding: 0;
-  display: block;
-  min-width: 16px;
-  min-height: 14px;
+    /* Let use the public domain cursor for the buttons. 
+	We need to backtrack out of this directory "../" and into media to find the .cur file.
+	In case of failure to load mouse use computer default.
+	*/
+    cursor: url("../media/Original black custom - normal select.cur"), default;
+    padding: 0;
+    display: block;
+    min-width: 16px;
+    min-height: 14px;
 }
 
 .title-bar-controls button:active {

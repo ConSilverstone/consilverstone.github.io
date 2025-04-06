@@ -16,13 +16,7 @@
 	}
 
 .header {
-	background: tomato;
 	padding: 10px
-	}
-
-
-.banded-div {
-	background: lightgreen;
 	}
 
 .main {
@@ -37,27 +31,7 @@
 .aside-1 {
 	min-width: 100px;
 	max-width: 250px;
-	background: black;
-	color: red;
 	flex: 1; /* Take up the space you need vertically to display text */
-	}
-
-@media all and (min-width: 600px) {
-	.aside {flex: 1 0 0;}
-	}
-	
-@media all and (min-width: 800px) {
-	.main {flex: 3 0PX;}
-	.aside-1 {order: 1;}
-	.main {order: 2;}
-	.banded-div {order: 4;}
-}
-
-@media all and (min-width: 800px) {
-	.main-email {flex: 3 ;}
-	.aside-email {flex: 1;}
-	.main-email {order: 2;}
-	.banded-div {order: 4;}
 	}
 
 body {
@@ -73,6 +47,66 @@ body {
 	padding: 2em;
 }
 
+/* Audio and media controls */
+.soundboard-button {
+	/* public domain cursor for the audio controls using select variant. 
+	We need to backtrack out of this directory "../" and into media to find the .cur file.
+	In case of failure to load mouse use computer default.
+	*/
+	cursor: url("../media/Original black custom - link select.cur"), default;
+}
+
+/* page structure */
+@media all and (min-width: 600px) {
+	.aside {
+		flex: 1 0 0;
+	}
+}
+@media all and (min-width: 800px) {
+	.main {
+		flex: 3 0PX;
+	}
+
+	.aside-1 {
+		order: 1;
+	}
+
+	.main {
+		order: 2;
+	}
+
+	.banded-div {
+		order: 4;
+	}
+}
+@media all and (min-width: 800px) {
+	.main-email {
+		flex: 3;
+	}
+
+	.aside-email {
+		flex: 1;
+	}
+
+	.main-email {
+		order: 2;
+	}
+
+	.banded-div {
+		order: 4;
+	}
+}
+
+/* Footer CSS */
+.footer-div {
+	content: "";
+	display: flex;
+	clear: both;
+}
+.footer-column {
+	width: 33.33%;
+	padding: 10px;
+}
 footer {
 	margin-top: auto;
 }

@@ -1,96 +1,113 @@
 <!DOCTYPE html>
 
+<!--lang allows us to tell the browser that language the content that what country the target audience is-->
 <html lang="en-GB">
 
-<head>
-	<title>You've got mail!</title>
-	<!-- Windows 98 creation source: https://jdan.github.io/98.css/ -->
-	<!-- This is the more general layout while main make specific changes per page -->
-	<link rel="stylesheet" href="./static/style.css">
-	<link rel="stylesheet" href="./static/main.css">
-	<link rel="icon" type="image/png" href="./media/phishingicon.png">
-</head>
+	<head>
+		<title>You've got mail!</title>
+		<!-- Windows 98 creation source: https://jdan.github.io/98.css/ -->
+		<!-- This is the more general layout while main make specific changes per page -->
+		<link rel="stylesheet" href="./static/style.css">
+		<link rel="stylesheet" href="./static/main.css">
+		<link rel="icon" type="image/png" href="./media/phishingicon.png">
+	</head>
 
 
-<body>
+	<body>
 
-	<!-- Top Page Banner -->
-	<div class="window">
-		<div class="title-bar">
-			<div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
-				<h1>You've got mail!</h1>
-			</div>
-		</div>
-		<div class="window-body">
-			<p>The online phishing minigame.</p>
-		</div>
-	</div>
-
-	<!-- Start of html content -->
-	<div class="window-body">
-		<menu role="tablist" class="multirows">
-			<li role="tab"><a href="index.html">Home</a></li>
-			<li role="tab"><a href="tutorial.html">Tutorial</a></li>
-			<li role="tab"><a href="email.html">Play</a></li>
-			<li role="tab"><a href="scoreboard.html">Scoreboard</a></li>
-		</menu>
-
-		<div class="window" role="tabpanel">
-			<div class="window-body">
-
-			</div>
-		</div>
-	</div>
-
-	<div class="wrapper">
-		<article class="main">
-			<header id="opening-title">Welcome to You've got mail!</header>
-
-			<!--
-				Page load will play mp3 file once.
-				Autoplay does not work for chrome.
-				If it does not load correctly display an error message.
-			-->
-			<audio controls autoplay>
-				<source src="./media/youGotmail.mp3" type="audio/mpeg">
-				Your browser does not support this audio element. <!--Error Message-->
-			</audio>
-
-			<p>
-				Test your understanding of online danger with this threat assessment game, you will be given a snapshot of an email list belonging to John Smith.
-				Read the context below carefully to identify what might be an unusual message to recieve. If you are yet to play view the tutorial first before proceeding.<br>
-			</p>
-			<header id="next-title">Context</header>
-			<p>
-				Hello John, thank you for joining the sales team for Superauto&trade. We are super exicited to have you! Make sure you are ready to start for the 10th of september at 9am.
-				<b>With the growing Y2K concerns</b> we have recently updated our email system. Since your email is all set up during this process you will of recieved a backlog of emails. I have been informed
-				that you have recieved the online safety briefing but to reiterate read carefully and report anything unusual to the computing team. You will have the morning to do so before being given
-				duties expected of your role. <br><br>
-
-				Look forward to working with you, <br>
-				<!--&nbsp; acts as a tab character-->
-				&nbsp; - Supervisor Greenie
-			</p>
-		</article>
-		<aside class="aside aside-1">
+		<!-- Top Page Banner -->
+		<div class="window">
 			<div class="title-bar">
-				<div class="title-bar-text">Content</div>
-				<div class="title-bar-controls">
-					<button aria-label="Minimize"></button>
-					<button aria-label="Maximize"></button>
-					<button aria-label="Close"></button>
+				<div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
+					<h1>You've got mail!</h1>
 				</div>
 			</div>
-			<ul class="window" style="list-style-type: none;">
-				<li><h3><a href="#opening-title">Welcome</a></h3></li>
-				<li><h3><a href="#next-title">Context</a></h3></li>
-				<li><h3><a href="#next-title">Context 2</a></h3></li>
-			</ul>
-		</aside>
-		<footer class="banded-div">
-			<a href="sources.html">Attribution</a>
-			<a href="team.html">Credits</a>
-		</footer>
-	</div>
-</body>
+			<div class="window-body">
+				<p>The online phishing minigame.</p>
+			</div>
+		</div>
+
+		<!-- Start of html content -->
+		<div class="window-body">
+			<menu role="tablist" class="multirows">
+				<li role="tab"><a href="index.html">Home</a></li>
+				<li role="tab"><a href="tutorial.html">Tutorial</a></li>
+				<li role="tab"><a href="email.html">Play</a></li>
+				<li role="tab"><a href="scoreboard.html">Scoreboard</a></li>
+			</menu>
+
+			<div class="window" role="tabpanel">
+				<div class="window-body">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="wrapper">
+			<article class="main">
+				<h4 id="opening-title">
+					Welcome to You've got mail!
+					<!--
+					Embedded in header element is display inline with.
+					Page load will play mp3 file once.
+					Autoplay does not work for chrome.
+					If it does not load correctly display an error message.
+					-->
+					<audio class="soundboard-button" controls autoplay style="width: 100px; height: 20px">
+						<source src="./media/youGotmail.mp3" type="audio/mpeg">
+						Your browser does not support this audio element. <!--Error Message-->
+					</audio>
+				</h4>
+
+				<p>
+					Test your understanding of online danger with this threat assessment game, you will be given a snapshot of an email list belonging to John Smith.
+					Read the context below carefully to identify what might be an unusual message to recieve. If you are yet to play view the tutorial first before proceeding.<br>
+				</p>
+				<h4 id="next-title">Context</h4>
+				<p>
+					<!--&trade; is a special character in HTML thats displays the ascii tm (trademark) symbol-->
+					Hello John, thank you for joining the sales team for Superauto&trade&trade;. We are super exicited to have you! Make sure you are ready to start for the 10th of september at 9am.
+					<b>With the growing Y2K concerns</b> we have recently updated our email system. Since your email is all set up during this process you will of recieved a backlog of emails. I have been informed
+					that you have recieved the online safety briefing but to reiterate read carefully and report anything unusual to the computing team. You will have the morning to do so before being given
+					duties expected of your role. <br><br>
+
+					Look forward to working with you, <br>
+					<!--&nbsp; is a special character that tells the browser to respect that space.-->
+					&nbsp;&nbsp; - Supervisor Greenie
+				</p>
+			</article>
+			<aside class="aside aside-1">
+				<div class=" window">
+					<div class="title-bar">
+						<div class="title-bar-text">Content</div>
+						<div class="title-bar-controls">
+							<button aria-label="Minimize"></button>
+							<button aria-label="Maximize"></button>
+							<button aria-label="Close"></button>
+						</div>
+					</div>
+					<ul class="window-body" style="list-style-type: none;">
+						<li><h3><a href="#opening-title">Welcome</a></h3></li>
+						<li><h3><a href="#next-title">Context</a></h3></li>
+						<li><h3><a href="#next-title">Context 2</a></h3></li>
+					</ul>
+				</div>
+			</aside>
+		</div>
+	</body>
 </html>
+
+<footer class="footer-div">
+	<!-- Divided into thirds, left is empty, middle for less relivent hyperlinks, right for the clock js element -->
+	<div class="footer-column" style="background-color: #b3b3b3">
+		<!--Left section footer divider-->
+	</div>
+	<div class="footer-column" style="background-color: #c0c0c0; text-align: center">
+		<!--Middle section footer divider-->
+		<a href="sources.html">Attribution</a>
+		<a href="team.html">Credits</a>
+	</div>
+	<div class="footer-column" style="background-color: #b3b3b3">
+		<!--Right section footer divider-->
+	</div>
+</footer>
