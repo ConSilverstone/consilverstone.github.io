@@ -99,11 +99,19 @@ body {
 
 /* Footer CSS */
 .footer-div {
+	/* Flexable display for footer column and say clear of floating elements */
 	content: "";
 	display: flex;
 	clear: both;
+	
+	/* Lets make it so that the bar is always displayed at bottom regardless of window size */
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
 }
 .footer-column {
+	/* size related to volume of column we want on screen and the clearence for contents before
+	moving down a line */
 	width: 33.33%;
 	padding: 10px;
 }
