@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en-GB">
 <head>
     <title>You've got mail!</title>
@@ -7,18 +8,17 @@
     <link rel="icon" type="image/png" href="./media/phishingicon.png">
 </head>
 <body>
-
-  <!-- Top Page Banner -->
-  <div class="window">
-    <div class="title-bar">
-      <div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
-        <h1>You've got mail!</h1>
-      </div>
-    </div>
-    <div class="window-body">
-      <h3 id="score" ></h3>Your total: </h3>
+<!-- Top Page Banner -->
+<div class="window">
+  <div class="title-bar">
+    <div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
+      <h1>You've got mail!</h1>
     </div>
   </div>
+  <div class="window-body">
+    <p>The online phishing minigame.</p>
+  </div>
+</div>
 <!-- 98.css upper tabs -->
 <div class="window-body">
     <menu role="tablist" class="multirows">
@@ -39,7 +39,7 @@
     <article class="main-email">
       <div class="window" style="width: 100%">
         <div class="title-bar">
-          <div class="title-bar-text">Need credentials</div>
+          <div class="title-bar-text">Password leak</div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
@@ -55,9 +55,12 @@
         </div>
         <div class="email-body">
           <p>Dear User,</p>
-          <p>We need to check your password as it may have been in a data breach, please send it to me.</p>
-          <p>Please do so urgently.</p>
-          <p>IT</p>
+          <p>Unfortunately we have had a data breach and believe your account has been affected. </p>
+          <p>We reccommend that you should change your passwords if they are the same as this account.</p>
+          <p>please check out https://haveibeenpwned.com/</p>
+         
+          <p>We apologise sincerely .</p>
+          <p>Disaster recovery team</p>
         </div> 
       </div>
 
@@ -78,17 +81,17 @@
           <tbody>
             <tr>
               <td>1</td>
-              <td><a href="email.html">Need credentials</a></td>
+              <td><a href="email-1.html">Need credentials</a></td>
               <td>☑</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>PLACEHOLDER EMAIL</td>
+              <td><a href="email-2.html">Password leak</a></td>
               <td>☑</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>PLACEHOLDER EMAIL</td>
+              <td><a href="email-3.html">URGENT</a></td>
               <td>☑</td>
             </tr>
             <tr>
@@ -112,33 +115,40 @@
     </aside>
   </div>
 
+  <!-- button-->
+  <div class="button-cont">
+    <button id ="button1" class="button button2">Smells fishy</button>
+    <button id ="button2" class="button button2">A OK!</button>
+  </div>">
   
   <script>
 
-  var correctAnswers = ["A","B","A", "A"];
+ // create a variable for the cookie answer
+var cookie_answer = [];
+
+var cookie = document.cookie;
+
+//extract the cookie value into a dictionary
+var previousAnswers = cookie.split("=");
+
+//split the cookie value into each answer
+cookie_answer = previousAnswers[1].split(",");
     
-  var totalScore = 0
-
-  //store cookie in a variable
-  var cookie = document.cookie;
-
-  //extract the cookie value into a dictionary
-  var previousAnswers = cookie.split("=");
-
-  //split the cookie value into each answer
-  cookie_answer = previousAnswers[1].split(",");
-      
-
-    // Calculate the total score
-    for (var i = 0; i < cookie_answer.length; i++) {
-      if (cookie_answer[i] == correctAnswers[i]) {
-          totalScore++;
-      }
-  }
-
-  // Update the header with the total score
-  document.getElementById("score").textContent = `You scored ${totalScore}/${correctAnswers.length}`;
-</script>
-  </script>
+    document.getElementById("button1")?.addEventListener("click", button1Function);
+    document.getElementById("button2")?.addEventListener("click", button2Function);
+    
+    function button1Function() {
+        cookie_answer.push("A");
+        document.cookie = "answers=" + cookie_answer.join(",");
+        window.location.href = "summary.html"
+    }
+    
+    function button2Function() {
+        cookie_answer.push("B");
+        document.cookie = "answers=" + cookie_answer.join(",");
+        window.location.href = "summary.html"
+    }
+    
+      </script>
 </body>
 </html>

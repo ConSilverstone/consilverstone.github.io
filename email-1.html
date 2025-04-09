@@ -1,24 +1,27 @@
 <!DOCTYPE html>
+
 <html lang="en-GB">
 <head>
     <title>You've got mail!</title>
     <link rel="stylesheet" href="./static/main.css">
+    <!-- clink rel="stylesheet" href="./static/style.css" -->
     <link rel="stylesheet" href="https://unpkg.com/98.css">
     <link rel="icon" type="image/png" href="./media/phishingicon.png">
 </head>
 <body>
 
-  <!-- Top Page Banner -->
-  <div class="window">
-    <div class="title-bar">
-      <div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
-        <h1>You've got mail!</h1>
-      </div>
-    </div>
-    <div class="window-body">
-      <h3 id="score" ></h3>Your total: </h3>
-    </div>
-  </div>
+<!-- Top Page Banner -->
+		<div class="window">
+			<div class="title-bar">
+				<div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
+					<h1>You've got mail!</h1>
+				</div>
+			</div>
+			<div class="window-body">
+				<p>The online phishing minigame.</p>
+			</div>
+		</div>
+    
 <!-- 98.css upper tabs -->
 <div class="window-body">
     <menu role="tablist" class="multirows">
@@ -78,12 +81,12 @@
           <tbody>
             <tr>
               <td>1</td>
-              <td><a href="email.html">Need credentials</a></td>
+              <td><a href="email-1.html">Need credentials</a></td>
               <td>☑</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>PLACEHOLDER EMAIL</td>
+              <td><a href="email-2.html">Password leak</a></td>
               <td>☑</td>
             </tr>
             <tr>
@@ -112,33 +115,33 @@
     </aside>
   </div>
 
+  <!-- button-->
+  <div class="button-cont">
+    <button id ="button1" class="button button2">Smells fishy</button>
+    <button id ="button2" class="button button2">A OK!</button>
+  </div>">
   
   <script>
 
-  var correctAnswers = ["A","B","A", "A"];
-    
-  var totalScore = 0
+// create a variable for the cookie answer
+var cookie_answer = [];
 
-  //store cookie in a variable
-  var cookie = document.cookie;
+document.getElementById("button1")?.addEventListener("click", button1Function);
+document.getElementById("button2")?.addEventListener("click", button2Function);
 
-  //extract the cookie value into a dictionary
-  var previousAnswers = cookie.split("=");
+function button1Function() {
+    cookie_answer.push("A");
+    document.cookie = "answers=" + cookie_answer.join(",");
+    window.location.href = "email-2.html"
+}
 
-  //split the cookie value into each answer
-  cookie_answer = previousAnswers[1].split(",");
-      
+function button2Function() {
+    cookie_answer.push("B");
+    document.cookie = "answers=" + cookie_answer.join(",");
+    window.location.href = "email-2.html"
+}
 
-    // Calculate the total score
-    for (var i = 0; i < cookie_answer.length; i++) {
-      if (cookie_answer[i] == correctAnswers[i]) {
-          totalScore++;
-      }
-  }
-
-  // Update the header with the total score
-  document.getElementById("score").textContent = `You scored ${totalScore}/${correctAnswers.length}`;
-</script>
   </script>
+
 </body>
 </html>
