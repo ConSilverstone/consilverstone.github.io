@@ -138,4 +138,14 @@ footer {
 	margin-top: auto;
 }
 
+/* Javascript Element Design */
+#clock {
+	font-size: 15px;
+	/* width set to 95% to avoid touching browser edge, using % as it is more scalable */
+	width: 95%;
+	padding: 5px;
+	position: relative;
+	text-align: center;
+	border: 2px solid black;
+}
 
