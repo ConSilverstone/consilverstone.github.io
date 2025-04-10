@@ -120,9 +120,14 @@ body {
 	*/
 	width: 20%;
 	padding: 10px;
-	background-color: #b3b3b3
+	background-color: #C2C2C2;
+	border: solid 1px;
+	border-left-color: white;
+	border-right-color: white;
+	border-top-color: white;
+	
 }
-.footer-column-center {
+.footer-column-center-space {
 	/* size related to volume of column we want on screen and the clearence for contents before
 	This represents the "application" icons for the central 8 columns.
 	moving down a line */
@@ -130,12 +135,43 @@ body {
 	padding: 10px;
 	background-color: #c0c0c0;
 	text-align: center;
-	border: solid;
-	border-width: 1px;
-	border-block-color: #b3b3b3;
+	border-top: 2px solid white;
 }
-footer {
-	margin-top: auto;
+.footer-button-in-use {
+	/* size related to volume of column we want on screen and the clearence for contents before
+	This represents the "application" icons for the central 8 columns.
+	moving down a line */
+	width: 95%;
+	height: 55%;
+	padding: 10px;
+	background-color: #E4E6E7;
+	text-align: center;
+	/* make it look like a taskbar tab*/
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	border-bottom: 2px solid white;
+	border-right: 2px solid white;
+}
+.footer-button-unused {
+	/* size related to volume of column we want on screen and the clearence for contents before
+	This represents the "application" icons for the central 8 columns.
+	moving down a line */
+	width: 95%;
+	height: 55%;
+	padding: 10px;
+	background-color: #E4E6E7;
+	text-align: center;
+	/* make it look like a taskbar tab*/
+	border-top: 2px solid white;
+	border-left: 2px solid white;
+	border-bottom: 2px solid black;
+	border-right: 2px solid black;
+}
+/* The class overloading is in case "button-in-use" is used for a purpose other than the task bar*/
+.footer-column-center-space .footer-button-in-use img {
+	vertical-align: middle;
+	left: 0px;
+	width: 15%;
 }
 
 /* Javascript Element Design */
@@ -146,6 +182,10 @@ footer {
 	padding: 5px;
 	position: relative;
 	text-align: center;
-	border: 2px solid black;
+	/* Create the intended box look for windows 98*/
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	border-bottom: 2px solid white;
+	border-right: 2px solid white;
 }
 
