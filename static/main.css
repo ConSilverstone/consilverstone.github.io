@@ -36,9 +36,10 @@
 	}
 
 .aside-1 {
-	min-width: 100px;
-	max-width: 250px;
-	flex: 1; /* Take up the space you need vertically to display text */
+	/* Do not allow it to shrink to smaller than 300px, take a new line. */
+	min-width: 300px;
+	/* Should be no longer than 20% of screen */
+	max-width: 20%;
 	}
 
 body {
@@ -73,7 +74,7 @@ body {
 }
 @media all and (min-width: 800px) {
 	.main {
-		flex: 3 0PX;
+		flex: 3 0px;
 	}
 
 	.aside-1 {
@@ -106,7 +107,7 @@ body {
 	}
 }
 
-/* Footer CSS */
+/* Taskbar nav CSS */
 .footer-div {
 	/* Flexable display for footer column and say clear of floating elements */
 	content: "";
@@ -151,7 +152,12 @@ body {
 	height: 55%;
 	padding: 10px;
 	background-color: #E4E6E7;
-	text-align: center;
+	/* For both text and images */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* gap between elements (image and text) */
+	gap: 10px;
 	/* make it look like a taskbar tab*/
 	border-top: 2px solid black;
 	border-left: 2px solid black;
@@ -166,7 +172,12 @@ body {
 	height: 55%;
 	padding: 10px;
 	background-color: #E4E6E7;
-	text-align: center;
+	/* For both text and images */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* gap between elements (image and text) */
+	gap: 10px;
 	/* make it look like a taskbar tab*/
 	border-top: 2px solid white;
 	border-left: 2px solid white;
@@ -175,15 +186,19 @@ body {
 }
 /* The descendant selector is in case "button-in-use" is used for a purpose other than the task bar*/
 .footer-column-center-space .footer-button-in-use img {
-	vertical-align: middle;
-	left: 0px;
-	width: 15%;
+	/* maintain consistant size */
+	width: 100%;
+	max-width: 30px;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
 }
 /* The class overloading is in case "button-in-use" is used for a purpose other than the task bar*/
 .footer-column-center-space .footer-button-unused img {
-	vertical-align: middle;
-	left: 0px;
-	width: 15%;
+	/* maintain consistant size */
+	width: 100%;
+	max-width: 30px;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
 }
 
 /* Javascript Element Design */
