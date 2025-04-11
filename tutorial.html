@@ -1,42 +1,12 @@
 <html>
 	
 	<head>
-	
-		<title>Tutorial Page</title>
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>You've got mail!</title>
+		<!-- Windows 98 window elements source: https://jdan.github.io/98.css/ -->
+		<!-- This is the more general layout while main make specific changes per page -->
+		<link rel="stylesheet" href="./static/style.css">
 		<link rel="stylesheet" href="./static/main.css">
-		<style>
-			
-			h1{text-align: center;}
-			
-			
-			nav{
-				overflow: hidden;
-				background-color: #333;
-				}
-
-			nav a {
-				float: left;
-				color: #f2f2f2;
-				text-align: center;
-				padding: 14px 16px;
-				text-decoration: none;
-				font-size: 17px;
-				}
-				
-			nav a:hover{
-				background-color: #ddd;
-				color: black;
-				}
-				
-			nav a.active {
-				background-color: #1ecbe1;
-				color: white;
-				}	
-			
-		</style>
-	
+		<link rel="icon" type="image/png" href="./media/images/phishingicon.png">
 	</head>
 	
 	
@@ -44,46 +14,122 @@
 	
 	<body>
 	
-		<div class="banner">
-			<h1>You've Got Mail!</h1>
-			<h3>The online phishing minigame.</h3>
+		<!-- Top Page Banner -->
+		<div class="window">
+			<div class="title-bar">
+				<div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
+					<h1>You've got mail!</h1>
+				</div>
+			</div>
+			<div class="window-body">
+				<p>The online phishing minigame.</p>
+			</div>
 		</div>
-	
-		<nav>
-	
-			<a href="">Home</a>
-			<a class="active"href="C:\University\Web-Technologies\coursework website\tutorial.html">Tutorial</a>
-			<a href="">Play</a>
-			
-		</nav>
-		
-		<h1>Tutorial</h1>
-		<p>The aim of the game is to try to identify weather or not the eamils are fake/phishing or real/safe.<br>
-		When trying to identify the email there are a number of different types of identifiers some of these are:<br> 
-		email having a generic type of greeting, the name of the sender and the email address not matching up,<br>
-		the sender trying to create a sense of urgency so that the reader doesn’t notice something in the email, bad grammar and fake links.<br>
-		If you suspect that the email is a fake email then you will click on the button that says "suspicious" however if you belive it to be a real eamil click on the "safe" button.<br>
-		This will then display a pop up manu which will in turn show either a well done message or a incorrect message dpendond on if you answered correctly.</p>		
-		
-		<img src="Images\Placeholder1.jpg" width="500" height="400" style="padding-left:50px;">
-		<img src="Images\Placeholder2.jpg" width="500" height="400" style="padding-left:250px;">
-		
-		<p>This is where the dexcription of the anotated image will go<br>
-		When navigating the game there will be a nav bar on the left which will act like the email client.<br>
-		This will have the header of the email as well as the name of the sender of the emal.<br>
-		Once of you hav finished with the email you are on all you will have to do is click on one of the emails on the left to open the next email.</p>
-		
-		<a href= "">Placeholder Link to the game<a>
+
+		<div class="wrapper">
+			<article class="main">
+				<!--Create window elements-->
+				<div class="window">
+					<div class="title-bar">
+						<div class="title-bar-text">
+							Welcome!
+						</div>
+						<div class="title-bar-controls">
+							<button aria-label="Minimize"></button>
+							<button aria-label="Maximize"></button>
+							<button aria-label="Close"></button>
+						</div>
+					</div>
+				<!--Content to be displayed, inside window-->
+				<h4 id="opening-title">Welcome to the Tutorial</h4>
+
+				<p>The aim of the game is to try to identify weather or not the eamils are fake/phishing or real/safe.<br>
+				When trying to identify the email there are a number of different types of identifiers some of these are:<br> 
+				email having a generic type of greeting, the name of the sender and the email address not matching up,<br>
+				the sender trying to create a sense of urgency so that the reader doesn’t notice something in the email, bad grammar and fake links.<br>
+				If you suspect that the email is a fake email then you will click on the button that says "suspicious" however if you belive it to be a real eamil click on the "safe" button.<br>
+				This will then display a pop up manu which will in turn show either a well done message or a incorrect message dpendond on if you answered correctly.</p>
+				<img src="Images\Placeholder1.jpg" width="500" height="400" style="padding-left:50;">
+				<img src="Images\Placeholder2.jpg" width="500" height="400" style="padding-left:250;">
+				<p>This is where the description of the anotated image will go<br>
+				When navigating the game there will be a nav bar on the left which will act like the email client.<br>
+				This will have the header of the email as well as the name of the sender of the emal.<br>
+				Once of you hav finished with the email you are on all you will have to do is click on one of the emails on the left to open the next email.</p>
+				</div>
+			</article>
+		</div>
 		
 	</body>
-
-	<div class="wrapper">	
-	<footer class="banded-div">
-	    		<a href="sources.html">Attribution</a>
-  	    		<a href="team.html">Credits</a>
-		</footer>
-	</div>
-	
-
-
 </html>
+
+<footer class="footer-div">
+	<!-- Divided into thirds, left is empty, middle for less relivent hyperlinks, right for the clock js element -->
+	<div class="footer-column-edge">
+		<!--
+			Left section footer divider
+			Used for the start menu element
+		-->
+		<a>Start menu here</a> <!--placeholder text-->
+	</div>
+	<!--Start of central elements-->
+	<div class="footer-column-center-space">
+		<!--Middle section footer divider 1-->
+		<div class="footer-button-in-use">
+			<img src="./media/images/Home_Icon.png" alt="Home Icon">
+			<a href="index.html">Home</a>
+		</div>
+	</div>
+	<div class="footer-column-center-space">
+		<!--Middle section footer divider 2-->
+		<div class="footer-button-unused">
+			<img src="./media/images/tutorial_icon.png" alt="Tutorial Icon">
+			<a href="tutorial.html">Tutorial</a>
+		</div>
+	</div>
+	<div class="footer-column-center-space">
+		<!--Middle section footer divider 3-->
+		<div class="footer-button-unused">
+			<img src="./media/images/phishingicon.png" alt="Play Icon">
+			<a href="email-1.html">Play</a>
+		</div>
+	</div>
+	<div class="footer-column-center-space">
+		<!--Middle section footer divider 4-->
+		<div class="footer-button-unused">
+			<img src="./media/images/checklist-41335_1280.png" alt="Scoreboard Icon">
+			<a href="scoreboard.html">Scoreboard</a>
+		</div>
+	</div>
+	<div class="footer-column-center-space">
+		<!--Middle section footer divider 5-->
+		<div class="footer-button-unused">
+			<img src="./media/images/cc.svg" alt="CC Logo">
+			<a href="sources.html">Attribution</a>
+		</div>
+	</div>
+	<div class="footer-column-center-space">
+		<!--Middle section footer divider 6-->
+		<div class="footer-button-unused">
+			<img src="./media/images/team.png" alt="Team Icon">
+			<a href="team.html">Credits</a>
+		</div>
+	</div>
+	<div class="footer-column-center-space">
+		<!--Middle section footer divider 7-->
+
+	</div>
+	<div class="footer-column-center-space">
+		<!--Middle section footer divider 8-->
+		
+	</div>
+	<!--End of central elements-->
+	<div class="footer-column-edge">
+		<!--
+		Right section footer divider
+		Used for the clock widget element
+	-->
+		<div id="clock">8:10:45</div>
+
+		<script src="./scripts/taskbar_clock.js"></script>
+	</div>
+</footer>
