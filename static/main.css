@@ -173,6 +173,12 @@ body {
 	left: 0px;
 	width: 15%;
 }
+/* The class overloading is in case "button-in-use" is used for a purpose other than the task bar*/
+.footer-column-center-space .footer-button-unused img {
+	vertical-align: middle;
+	left: 0px;
+	width: 15%;
+}
 
 /* Javascript Element Design */
 #clock {
