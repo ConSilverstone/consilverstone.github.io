@@ -21,8 +21,15 @@
 
 .main {
 	text-align: left;
-	background: deepskyblue;
 	}
+
+	/* html will inherit from .window in style.css first then we add these changes here */
+.window p {
+	padding-left: 10px;
+}
+.window h4 {
+	padding-left: 10px;
+}
 
 .main-email {
 	text-align: left;
@@ -46,7 +53,7 @@ body {
 	flex-direction: column;
 	padding: 2em;
 	/* Display background image*/
-	background-image: url("../media/background.png");
+	background-image: url("../media/images/background.png");
 }
 
 /* Audio and media controls */
@@ -121,11 +128,10 @@ body {
 	width: 20%;
 	padding: 10px;
 	background-color: #C2C2C2;
-	border: solid 1px;
+	border: solid 4px;
 	border-left-color: white;
 	border-right-color: white;
 	border-top-color: white;
-	
 }
 .footer-column-center-space {
 	/* size related to volume of column we want on screen and the clearence for contents before
@@ -135,7 +141,7 @@ body {
 	padding: 10px;
 	background-color: #c0c0c0;
 	text-align: center;
-	border-top: 2px solid white;
+	border-top: 1px solid white;
 }
 .footer-button-in-use {
 	/* size related to volume of column we want on screen and the clearence for contents before
@@ -167,7 +173,7 @@ body {
 	border-bottom: 2px solid black;
 	border-right: 2px solid black;
 }
-/* The class overloading is in case "button-in-use" is used for a purpose other than the task bar*/
+/* The descendant selector is in case "button-in-use" is used for a purpose other than the task bar*/
 .footer-column-center-space .footer-button-in-use img {
 	vertical-align: middle;
 	left: 0px;

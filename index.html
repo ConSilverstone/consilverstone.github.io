@@ -5,11 +5,11 @@
 
 	<head>
 		<title>You've got mail!</title>
-		<!-- Windows 98 creation source: https://jdan.github.io/98.css/ -->
+		<!-- Windows 98 window elements source: https://jdan.github.io/98.css/ -->
 		<!-- This is the more general layout while main make specific changes per page -->
 		<link rel="stylesheet" href="./static/style.css">
 		<link rel="stylesheet" href="./static/main.css">
-		<link rel="icon" type="image/png" href="./media/phishingicon.png">
+		<link rel="icon" type="image/png" href="./media/images/phishingicon.png">
 	</head>
 
 
@@ -28,14 +28,22 @@
 		</div>
 
 		<!-- Start of html content -->
-		<div class="window" role="tabpanel">
-			<div class="window-body">
-
-			</div>
-		</div>
 
 		<div class="wrapper">
 			<article class="main">
+				<!--Create window elements-->
+				<div class="window">
+					<div class="title-bar">
+						<div class="title-bar-text">
+							Welcome!
+						</div>
+						<div class="title-bar-controls">
+							<button aria-label="Minimize"></button>
+							<button aria-label="Maximize"></button>
+							<button aria-label="Close"></button>
+						</div>
+					</div>
+				<!--Content to be displayed, inside window-->
 				<h4 id="opening-title">
 					Welcome to You've got mail!
 					<!--
@@ -66,6 +74,7 @@
 					<!--&nbsp; is a special character that tells the browser to respect that space.-->
 					&nbsp;&nbsp; - Supervisor Greenie
 				</p>
+				</div>
 			</article>
 			<aside class="aside aside-1">
 				<div class=" window">
@@ -101,26 +110,29 @@
 	<div class="footer-column-center-space">
 		<!--Middle section footer divider 1-->
 		<div class="footer-button-in-use">
-			<img src="./media/images/cc.svg" alt="CC Logo">
+			<img src="./media/images/Home_Icon.png" alt="Home Icon">
 			<a href="index.html">Home</a>
 		</div>
 	</div>
 	<div class="footer-column-center-space">
 		<!--Middle section footer divider 2-->
 		<div class="footer-button-unused">
+			<img src="./media/images/tutorial_icon.png" alt="Tutorial Icon">
 			<a href="tutorial.html">Tutorial</a>
 		</div>
 	</div>
 	<div class="footer-column-center-space">
 		<!--Middle section footer divider 3-->
 		<div class="footer-button-unused">
+			<img src="./media/images/phishingicon.png" alt="Play Icon">
 			<a href="email-1.html">Play</a>
 		</div>
 	</div>
 	<div class="footer-column-center-space">
 		<!--Middle section footer divider 4-->
 		<div class="footer-button-unused">
-			<a href="email-1.html">Scoreboard</a>
+			<img src="./media/images/checklist-41335_1280.png" alt="Scoreboard Icon">
+			<a href="scoreboard.html">Scoreboard</a>
 		</div>
 	</div>
 	<div class="footer-column-center-space">
@@ -133,6 +145,7 @@
 	<div class="footer-column-center-space">
 		<!--Middle section footer divider 6-->
 		<div class="footer-button-unused">
+			<img src="./media/images/team.png" alt="Team Icon">
 			<a href="team.html">Credits</a>
 		</div>
 	</div>
