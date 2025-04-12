@@ -4,24 +4,21 @@
 <head>
     <title>You've got mail!</title>
     <link rel="stylesheet" href="./static/main.css">
-    <!-- clink rel="stylesheet" href="./static/style.css" -->
     <link rel="stylesheet" href="https://unpkg.com/98.css">
     <link rel="icon" type="image/png" href="./media/images/phishingicon.png">
 </head>
 <body>
-
 <!-- Top Page Banner -->
-		<div class="window">
-			<div class="title-bar">
-				<div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
-					<h1>You've got mail!</h1>
-				</div>
-			</div>
-			<div class="window-body">
-				<p>The online phishing minigame.</p>
-			</div>
-		</div>
-    
+<div class="window">
+  <div class="title-bar">
+    <div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
+      <h1>You've got mail!</h1>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>The online phishing minigame.</p>
+  </div>
+</div>
 <!-- 98.css upper tabs -->
 <div class="window-body">
     <menu role="tablist" class="multirows">
@@ -42,7 +39,7 @@
     <article class="main-email">
       <div class="window" style="width: 100%">
         <div class="title-bar">
-          <div class="title-bar-text">Need credentials</div>
+          <div class="title-bar-text">Check Engine?</div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
@@ -52,15 +49,20 @@
         <!-- email content-->
       <div class="email-box">
         <div class="email-header">
-          <div class="email-header-from">From: <span>ITsupport@macrosift.com</span></div>
+          <div class="email-header-from">From: <span>AlexJohnson@hotmail.com</span></div>
           <div class="email-header-to">To: <span>Employee</span></div>
-          <div class="email-header-date">Date: <span>Today</span></div>
+          <div class="email-header-date">Date: <span>1 Week Ago</span></div>
         </div>
         <div class="email-body">
-          <p>Dear User,</p>
-          <p>We need to check your password as it may have been in a data breach, please send it to me.</p>
-          <p>Please do so urgently.</p>
-          <p>IT</p>
+          <p>Hey,</p>
+          <p>It's Alex. I recently purchased a vehicle from your dealership. 
+             Unfortunately, The engine has been making unusual noises, 
+             and the check engine light has turned on after only a week of use. <br>
+             Can I swing by for your mechanics to check it out? I hope that this isn't going to be a repeat occurence... <br>
+             <br>
+             Thanks, <br>
+             Alex Johnson
+          </p>
         </div> 
       </div>
 
@@ -123,25 +125,32 @@
   
   <script>
 
-// create a variable for the cookie answer
+ // create a variable for the cookie answer
 var cookie_answer = [];
 
-document.getElementById("button1")?.addEventListener("click", button1Function);
-document.getElementById("button2")?.addEventListener("click", button2Function);
+var cookie = document.cookie;
 
-function button1Function() {
-    cookie_answer.push("A");
-    document.cookie = "answers=" + cookie_answer.join(",");
-    window.location.href = "email-2.html"
-}
+//extract the cookie value into a dictionary
+var previousAnswers = cookie.split("=");
 
-function button2Function() {
-    cookie_answer.push("B");
-    document.cookie = "answers=" + cookie_answer.join(",");
-    window.location.href = "email-2.html"
-}
-
-  </script>
-
+//split the cookie value into each answer
+cookie_answer = previousAnswers[1].split(",");
+    
+    document.getElementById("button1")?.addEventListener("click", button1Function);
+    document.getElementById("button2")?.addEventListener("click", button2Function);
+    
+    function button1Function() {
+        cookie_answer.push("A");
+        document.cookie = "answers=" + cookie_answer.join(",");
+        window.location.href = "summary.html"
+    }
+    
+    function button2Function() {
+        cookie_answer.push("B");
+        document.cookie = "answers=" + cookie_answer.join(",");
+        window.location.href = "summary.html"
+    }
+    
+      </script>
 </body>
 </html>

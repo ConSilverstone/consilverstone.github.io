@@ -35,13 +35,6 @@
 	text-align: left;
 	}
 
-.aside-1 {
-	/* Do not allow it to shrink to smaller than 300px, take a new line. */
-	min-width: 300px;
-	/* Should be no longer than 20% of screen */
-	max-width: 20%;
-	}
-
 body {
 	/* Let make a custom public domain cursor for the website. 
 	We need to backtrack out of this directory "../" and into media to find the .cur file.
@@ -55,9 +48,16 @@ body {
 	padding: 2em;
 	/* Display background image*/
 	background-image: url("../media/images/background.png");
+
+	/* Default page setting without modifications */
+	font-family: Arial;
+	font-size: 15px;
+	color: #222222;
 }
 
+/*//////////////////////////*/
 /* Audio and media controls */
+/*//////////////////////////*/
 .soundboard-button {
 	/* public domain cursor for the audio controls using select variant. 
 	We need to backtrack out of this directory "../" and into media to find the .cur file.
@@ -65,8 +65,15 @@ body {
 	*/
 	cursor: url("../media/Original black custom - link select.cur"), default;
 }
+.attachments {
+	/* to display an attachment icon for emails and other media */
+	width: 10%;
+	aspect-ratio: 1 / 1;
+}
 
-/* page structure */
+/*///////////////////*/
+/* page(s) structure */
+/*///////////////////*/
 @media all and (min-width: 600px) {
 	.aside {
 		flex: 1 0 0;
@@ -85,7 +92,7 @@ body {
 		order: 2;
 	}
 
-	.banded-div {
+	.taskbar-buffer-div {
 		order: 4;
 	}
 }
@@ -102,12 +109,29 @@ body {
 		order: 2;
 	}
 
-	.banded-div {
+	.taskbar-buffer-div {
 		order: 4;
 	}
 }
 
+/*/////////////////*/
+/* page div blocks */
+/*/////////////////*/
+/* aside as achnor sidebar */
+.aside-1 {
+	/* Do not allow it to shrink to smaller than 300px, take a new line. */
+	min-width: 300px;
+	/* Should be no longer than 20% of screen */
+	max-width: 20%;
+	}
+/* Taskbar buffer to prevent hidding content behind the taskbar */
+.taskbar-buffer-div {
+	height: 50px;
+}
+
+/*/////////////////*/
 /* Taskbar nav CSS */
+/*/////////////////*/
 .footer-div {
 	/* Flexable display for footer column and say clear of floating elements */
 	content: "";
@@ -119,6 +143,7 @@ body {
 	/* bottom left in ensure so space to the bottom or left hand side */
 	bottom: 0px;
 	left: 0px;
+	/* Make it fill the page width end to end */
 	width: 100%;
 }
 .footer-column-edge {
@@ -200,8 +225,9 @@ body {
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
 }
-
+/*///////////////////////////*/
 /* Javascript Element Design */
+/*///////////////////////////*/
 #clock {
 	font-size: 15px;
 	/* width set to 95% to avoid touching browser edge, using % as it is more scalable */

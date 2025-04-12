@@ -114,12 +114,6 @@
     font-style: normal;
 }
 
-body {
-  font-family: Arial;
-  font-size: 15px;
-  color: #222222;
-}
-
 /* 
    This originally included .window but it was really hard to read so gonna take creative 
    liberties on that one.
