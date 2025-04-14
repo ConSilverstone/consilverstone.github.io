@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="window-body">
-      <h3 id="score" ></h3>Your total: </h3>
+      <h3 id="score"></h3>
     </div>
   </div>
 <!-- 98.css upper tabs -->
@@ -47,7 +47,7 @@
           </div>
         </div>
         <!-- email content-->
-      <div class="email-box">
+      <div id="email-box" class="email-box" >
         <div class="email-header">
           <div class="email-header-from">From: <span>ITsupport@macrosift.com</span></div>
           <div class="email-header-to">To: <span>Employee</span></div>
@@ -79,32 +79,32 @@
             <tr>
               <td>1</td>
               <td><a href="email.html">Need credentials</a></td>
-              <td>☑</td>
+              <td><button id ="email-1" class="button button2">Correct!</button></td>
             </tr>
             <tr>
               <td>2</td>
               <td>PLACEHOLDER EMAIL</td>
-              <td>☑</td>
+              <td><button id ="email-2" class="button button2">Correct!</button></td>
             </tr>
             <tr>
               <td>3</td>
               <td>PLACEHOLDER EMAIL</td>
-              <td>☑</td>
+              <td><button id ="email-3" class="button button2">Correct!</button></td>
             </tr>
             <tr>
               <td>4</td>
               <td>PLACEHOLDER EMAIL</td>
-              <td>☑</td>
+              <td><button id ="email-4" class="button button2">Correct!</button></td>
             </tr>
             <tr>
               <td>5</td>
               <td>PLACEHOLDER EMAIL</td>
-              <td>☑</td>
+              <td><button id ="email-5" class="button button2">Correct!</button></td>
             </tr>
             <tr>
               <td>6</td>
               <td>PLACEHOLDER EMAIL</td>
-              <td>☑</td>
+              <td><button id ="email-6" class="button button2">Correct!</button></td>
             </tr>
           </tbody>
         </table>
@@ -138,7 +138,41 @@
 
   // Update the header with the total score
   document.getElementById("score").textContent = `You scored ${totalScore}/${correctAnswers.length}`;
+
+  // update email box when clicked
+  document.getElementById("email-1").addEventListener("click", function() {
+      document.getElementById("email-box").innerHTML =  `
+      <div class="email-header">
+          <div class="email-header-from">From: <span>ITsupport@macrosift.com</span></div>
+          <div class="email-header-to">To: <span>Employee</span></div>
+          <div class="email-header-date">Date: <span>Today</span></div>
+        </div>
+        <div class="email-body">
+          <p>Dear User,</p>
+          <p>We need to check your password as it may have been in a data breach, please send it to me.</p>
+          <p>Please do so urgently.</p>
+          <p>IT</p>
+        </div>  
+        
+        `; });
+
+    document.getElementById("email-2").addEventListener("click", function() {
+      document.getElementById("email-box").innerHTML =  `
+      <div class="email-header">
+          <div class="email-header-from">From: <span>ITsupport@macrosift.com</span></div>
+          <div class="email-header-to">To: <span>Employee</span></div>
+          <div class="email-header-date">Date: <span>Today</span></div>
+        </div>
+        <div class="email-body">
+          <p>Dear User,</p>
+          <p>Unfortunately we have had a data breach and believe your account has been affected. </p>
+          <p>We reccommend that you should change your passwords if they are the same as this account.</p>
+          <p>please check out https://haveibeenpwned.com/</p>
+         
+          <p>We apologise sincerely .</p>
+          <p>Disaster recovery team</p>
+        </div>   
+        `; });
 </script>
-  </script>
 </body>
 </html>
