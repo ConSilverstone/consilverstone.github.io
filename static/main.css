@@ -175,6 +175,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 	/* gap between elements (image and text) */
 	gap: 10px;
 	/* make it look like a taskbar tab*/
@@ -195,6 +196,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 	/* gap between elements (image and text) */
 	gap: 10px;
 	/* make it look like a taskbar tab*/
@@ -210,6 +212,7 @@ body {
 	max-width: 30px;
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
+	flex-shrink: 0; /* Prevents it from shrinking smaller than 30px */
 }
 /* The class overloading is in case "button-in-use" is used for a purpose other than the task bar*/
 .taskbar-column-center-space .taskbar-button-unused img {
@@ -218,6 +221,7 @@ body {
 	max-width: 30px;
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
+	flex-shrink: 0; /* Prevents it from shrinking smaller than 30px */
 }
 
 /*///////////////////////////*/
