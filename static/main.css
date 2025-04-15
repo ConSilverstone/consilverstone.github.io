@@ -132,7 +132,7 @@ body {
 /*/////////////////*/
 /* Taskbar nav CSS */
 /*/////////////////*/
-.footer-div {
+.taskbar-div {
 	/* Flexable display for footer column and say clear of floating elements */
 	content: "";
 	display: flex;
@@ -146,7 +146,7 @@ body {
 	/* Make it fill the page width end to end */
 	width: 100%;
 }
-.footer-column-edge {
+.taskbar-column-edge {
 	/* size related to volume of column we want on screen and the clearence for contents before
 	moving down a line
 	This represents the outer 2 edges that will include the clock and start bar.
@@ -159,7 +159,7 @@ body {
 	border-right-color: white;
 	border-top-color: white;
 }
-.footer-column-center-space {
+.taskbar-column-center-space {
 	/* size related to volume of column we want on screen and the clearence for contents before
 	This represents the "application" icons for the central 8 columns.
 	moving down a line */
@@ -169,7 +169,7 @@ body {
 	text-align: center;
 	border-top: 1px solid white;
 }
-.footer-button-in-use {
+.taskbar-button-in-use {
 	/* size related to volume of column we want on screen and the clearence for contents before
 	This represents the "application" icons for the central 8 columns.
 	moving down a line */
@@ -189,7 +189,7 @@ body {
 	border-bottom: 2px solid white;
 	border-right: 2px solid white;
 }
-.footer-button-unused {
+.taskbar-button-unused {
 	/* size related to volume of column we want on screen and the clearence for contents before
 	This represents the "application" icons for the central 8 columns.
 	moving down a line */
@@ -210,7 +210,7 @@ body {
 	border-right: 2px solid black;
 }
 /* The descendant selector is in case "button-in-use" is used for a purpose other than the task bar*/
-.footer-column-center-space .footer-button-in-use img {
+.taskbar-column-center-space .taskbar-button-in-use img {
 	/* maintain consistant size */
 	width: 100%;
 	max-width: 30px;
@@ -218,13 +218,14 @@ body {
 	object-fit: cover;
 }
 /* The class overloading is in case "button-in-use" is used for a purpose other than the task bar*/
-.footer-column-center-space .footer-button-unused img {
+.taskbar-column-center-space .taskbar-button-unused img {
 	/* maintain consistant size */
 	width: 100%;
 	max-width: 30px;
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
 }
+
 /*///////////////////////////*/
 /* Javascript Element Design */
 /*///////////////////////////*/
