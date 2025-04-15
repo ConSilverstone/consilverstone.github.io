@@ -74,6 +74,7 @@ body {
 }
 @media (max-width: 800px) {
 	/* When reaching 600px drop text hyperlinks for taskbar */
+	/* 800px is rough cutoff for mobile devices */
 	.taskbar-button-in-use .button-text {
 		display: none;
 	}
@@ -177,6 +178,7 @@ body {
 	This represents the "application" icons for the central 8 columns.
 	moving down a line */
 	width: 95%;
+	min-width: 50%;
 	height: 55%;
 	padding: 10px;
 	background-color: #E4E6E7;
@@ -198,6 +200,7 @@ body {
 	This represents the "application" icons for the central 8 columns.
 	moving down a line */
 	width: 95%;
+	min-width: 50%;
 	height: 55%;
 	padding: 10px;
 	background-color: #E4E6E7;
