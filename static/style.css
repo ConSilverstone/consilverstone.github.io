@@ -9,13 +9,13 @@
  * Harry Maxwell
  * Jason Stewart
  * 
- * Jordan's work will be marked clearly though explanations of the functionality will be included.
+ * Jordan's work will be marked with explanations of functionality.
  */
 
-/* 
-   A set of variables that hold values or the result of calculations, 
-   reason being it is more clean to include it here rather than reference it multiple times.
-*/
+/*///////////////////////////////////////////////////////////////////////////////////////////*/
+/* :root A set of variables that hold values or the result of calculations,                  */
+/* reason being it is more clean to include it here rather than reference it multiple times. */
+/*///////////////////////////////////////////////////////////////////////////////////////////*/
 :root {
   /* Color */
   --surface: #c0c0c0;
@@ -33,26 +33,14 @@
   --element-spacing: 8px;
   --grouped-button-spacing: 4px;
   --grouped-element-spacing: 6px;
-  --radio-width: 12px;
   --checkbox-width: 13px;
-  --radio-label-spacing: 6px;
+  --checkbox-spacing: 6px;
   --range-track-height: 4px;
   --range-spacing: 10px;
 
-  /* Some detailed computations for radio buttons and checkboxes */
-  --radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
-  --radio-total-width: calc(var(--radio-total-width-precalc));
-  --radio-left: calc(-1 * var(--radio-total-width-precalc));
-  --radio-dot-width: 4px;
-  --radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
-  --radio-dot-left: calc(
-    -1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(
-        --radio-dot-width
-      ) / 2
-  );
-
+  /* Some detailed computations for checkbox size and placement */
   --checkbox-total-width-precalc: var(--checkbox-width) +
-    var(--radio-label-spacing);
+    var(--checkbox-spacing);
   --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
   --checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
   --checkmark-width: 7px;
@@ -82,13 +70,10 @@
     inset 2px 2px var(--window-frame);
 }
 
-/**
-*
-* Fonts designed by Jordan Scales <thatjdanisso.cool> 
-* Comments/Explanations by Connor Gallagher
-*
-**/
-
+/*////////////////////////////////////////////*/
+/* Fonts designed by Jordan Scales            */
+/* Comments/Explanations by Connor Gallagher  */
+/*////////////////////////////////////////////*/
 /* These are custom fonts to be loaded into the css for use. Treat normal text and bold text differently based on the same source */
 @font-face {
     /* When calling to use this font this is what it will be called */
@@ -96,7 +81,7 @@
     /* 
     .WOFF (Web Open Font Format) is used to deliver the stylesheet in a web readable fashion.
     It is also infused with the copyright information. The reason for woff2 is that it is an improved
-    model with better compression so browsers will woff 2 first if it is made available.
+    model with better compression so browsers will prefer woff 2 if it is available.
     */
     src: url("fonts/converted/ms_sans_serif.woff") format("woff");
     src: url("fonts/converted/ms_sans_serif.woff2") format("woff2");
@@ -114,10 +99,11 @@
     font-style: normal;
 }
 
-/* 
-   This originally included .window but it was really hard to read so gonna take creative 
-   liberties on that one.
-*/
+/*//////////////////////////////////////////////////////////////////////////////////*/
+/* Jorden Scales                                                                    */
+/* Basically just applying the new "Pixelated MS Sans Serif" font to everything!    */
+/* removed .window from list as (though more accurate) it was hard to read - Connor */
+/*//////////////////////////////////////////////////////////////////////////////////*/
 button,
 label,
 input,
@@ -131,29 +117,18 @@ ul.tree-view,
     font-size: 20px;
 }
 
-/* Connor Gallagher Addition */
-.window a {
-    font-family: "Pixelated MS Sans Serif", Arial;
-    -webkit-font-smoothing: none;
-    font-size: 40px;
-}
-
 h1 {
     font-size: 5rem;
 }
-
 h2 {
   font-size: 2.5rem;
 }
-
 h3 {
   font-size: 2rem;
 }
-
 h4 {
   font-size: 1.5rem;
 }
-
 u {
   text-decoration: none;
   border-bottom: 0.5px solid #222222;
@@ -224,11 +199,14 @@ input[type="reset"]:disabled,
 a {
     /* Lets change the cursor if it hovers over a link.
 	  We need to backtrack out of this directory "../" and into media to find the .cur file.
-	  In case of failure to load mouse use computer default.
+	  In case of failure to load mouse use computer default. - Connor
 	  */
     cursor: url("../media/Original black custom - link select.cur"), default;
 }
 
+/*///////////////////////////////////////////////////////////*/
+/* Jordan Scales title-bar css. Modified by Connor Gallagher */
+/*///////////////////////////////////////////////////////////*/
 .title-bar {
   background: linear-gradient(
     90deg,
@@ -240,7 +218,6 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-
 .title-bar.inactive {
   background: linear-gradient(
     90deg,
@@ -248,20 +225,18 @@ a {
     var(--dialog-gray-light)
   );
 }
-
 .title-bar-text {
   font-weight: bold;
   color: white;
   letter-spacing: 0;
   margin-right: 24px;
 }
-
 .title-bar-controls {
   display: flex;
 }
-
+/* Edits made here */
 .title-bar-controls button {
-    /* Let use the public domain cursor for the buttons. 
+  /* Let use the public domain cursor for the buttons. 
 	We need to backtrack out of this directory "../" and into media to find the .cur file.
 	In case of failure to load mouse use computer default.
 	*/
@@ -271,39 +246,32 @@ a {
     min-width: 16px;
     min-height: 14px;
 }
-
 .title-bar-controls button:active {
   padding: 0;
 }
-
 .title-bar-controls button:focus {
   outline: none;
 }
-
 .title-bar-controls button[aria-label="Minimize"] {
   background-image: url("./icon/minimize.svg");
   background-repeat: no-repeat;
   background-position: bottom 3px left 4px;
 }
-
 .title-bar-controls button[aria-label="Maximize"] {
   background-image: url("./icon/maximize.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 3px;
 }
-
 .title-bar-controls button[aria-label="Restore"] {
   background-image: url("./icon/restore.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 3px;
 }
-
 .title-bar-controls button[aria-label="Help"] {
   background-image: url("./icon/help.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 5px;
 }
-
 .title-bar-controls button[aria-label="Close"] {
   margin-left: 2px;
   background-image: url("./icon/close.svg");
@@ -326,6 +294,18 @@ a {
 
 .window-body {
   margin: var(--element-spacing);
+}
+/* Connor Gallagher Addition */
+.window h1, h2, h3, h4, h5, h6, p {
+  /* text was touching window border, this is to fix that */
+  padding-left: 10px;
+}
+.window a {
+  /* Nice big readable hyperlinks */
+  font-family: "Pixelated MS Sans Serif", Arial;
+  -webkit-font-smoothing: none;
+  font-size: 40px;
+  padding-left: 10px;
 }
 
 fieldset {
@@ -366,7 +346,9 @@ label {
   align-items: center;
 }
 
-input[type="radio"],
+/*//////////////////////////////////////////////////*/
+/* Jordan Scales checkbox css.                      */
+/*//////////////////////////////////////////////////*/
 input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
@@ -377,62 +359,16 @@ input[type="checkbox"] {
   opacity: 0;
   border: none;
 }
-
-input[type="radio"] + label,
 input[type="checkbox"] + label {
   line-height: 13px;
 }
-
-input[type="radio"] + label {
-  position: relative;
-  margin-left: var(--radio-total-width);
-}
-
-input[type="radio"] + label::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: calc(-1 * (var(--radio-total-width-precalc)));
-  display: inline-block;
-  width: var(--radio-width);
-  height: var(--radio-width);
-  margin-right: var(--radio-label-spacing);
-  background: url("./icon/radio-border.svg");
-}
-
-input[type="radio"]:active + label::before {
-  background: url("./icon/radio-border-disabled.svg");
-}
-
-input[type="radio"]:checked + label::after {
-  content: "";
-  display: block;
-  width: var(--radio-dot-width);
-  height: var(--radio-dot-width);
-  top: var(--radio-dot-top);
-  left: var(--radio-dot-left);
-  position: absolute;
-  background: url("./icon/radio-dot.svg");
-}
-
-input[type="radio"]:focus + label,
 input[type="checkbox"]:focus + label {
   outline: 1px dotted #000000;
 }
-
-input[type="radio"][disabled] + label::before {
-  background: url("./icon/radio-border-disabled.svg");
-}
-
-input[type="radio"][disabled]:checked + label::after {
-  background: url("./icon/radio-dot-disabled.svg");
-}
-
 input[type="checkbox"] + label {
   position: relative;
   margin-left: var(--checkbox-total-width);
 }
-
 input[type="checkbox"] + label::before {
   content: "";
   position: absolute;
@@ -442,13 +378,11 @@ input[type="checkbox"] + label::before {
   height: var(--checkbox-width);
   background: var(--button-highlight);
   box-shadow: var(--border-field);
-  margin-right: var(--radio-label-spacing);
+  margin-right: var(--checkbox-spacing);
 }
-
 input[type="checkbox"]:active + label::before {
   background: var(--surface);
 }
-
 input[type="checkbox"]:checked + label::after {
   content: "";
   display: block;
@@ -461,202 +395,11 @@ input[type="checkbox"]:checked + label::after {
   );
   background: url("./icon/checkmark.svg");
 }
-
 input[type="checkbox"][disabled] + label::before {
   background: var(--surface);
 }
-
 input[type="checkbox"][disabled]:checked + label::after {
   background: url("./icon/checkmark-disabled.svg");
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-select,
-textarea {
-  padding: 3px 4px;
-  border: none;
-  box-shadow: var(--border-field);
-  background-color: var(--button-highlight);
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-select {
-  height: 21px;
-}
-input[type="number"] {
-  /* need this 1 pixel to fit the spinner controls in box */
-  height: 22px;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"] {
-  /* For some reason descenders are getting cut off without this */
-  line-height: 2;
-}
-
-input[type="email"]:disabled,
-input[type="password"]:disabled,
-input[type="text"]:disabled,
-input[type="number"]:disabled,
-input[type="email"]:read-only,
-input[type="password"]:read-only,
-input[type="text"]:read-only,
-input[type="number"]:read-only,
-textarea:disabled {
-  background-color: var(--surface);
-}
-
-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  position: relative;
-  padding-right: 32px;
-  background-image: url("./icon/button-down.svg");
-  background-position: top 2px right 2px;
-  background-repeat: no-repeat;
-  border-radius: 0;
-}
-
-select:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-textarea:focus {
-  outline: none;
-}
-
-input[type="range"] {
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-}
-
-input[type="range"]:focus {
-  outline: none;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 21px;
-  width: 11px;
-  background: url("./icon/indicator-horizontal.svg");
-  transform: translateY(-8px);
-}
-
-input[type="range"].has-box-indicator::-webkit-slider-thumb {
-  background: url("./icon/indicator-rectangle-horizontal.svg");
-  transform: translateY(-10px);
-}
-
-input[type="range"]::-moz-range-thumb {
-  height: 21px;
-  width: 11px;
-  border: 0;
-  border-radius: 0;
-  background: url("./icon/indicator-horizontal.svg");
-  transform: translateY(2px);
-}
-
-input[type="range"].has-box-indicator::-moz-range-thumb {
-  background: url("./icon/indicator-rectangle-horizontal.svg");
-  transform: translateY(0px);
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 2px;
-  box-sizing: border-box;
-  background: black;
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
-}
-
-input[type="range"]::-moz-range-track {
-  width: 100%;
-  height: 2px;
-  box-sizing: border-box;
-  background: black;
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
-}
-
-.is-vertical {
-  display: inline-block;
-  width: 4px;
-  height: 150px;
-  transform: translateY(50%);
-}
-
-.is-vertical > input[type="range"] {
-  width: 150px;
-  height: 4px;
-  margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0
-    var(--range-spacing);
-  transform-origin: left;
-  transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing)));
-}
-
-.is-vertical > input[type="range"]::-webkit-slider-runnable-track {
-  border-left: 1px solid grey;
-  border-right: 0;
-  border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
-}
-
-.is-vertical > input[type="range"]::-moz-range-track {
-  border-left: 1px solid grey;
-  border-right: 0;
-  border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
-}
-
-.is-vertical > input[type="range"]::-webkit-slider-thumb {
-  transform: translateY(-8px) scaleX(-1);
-}
-
-.is-vertical > input[type="range"].has-box-indicator::-webkit-slider-thumb {
-  transform: translateY(-10px) scaleX(-1);
-}
-
-.is-vertical > input[type="range"]::-moz-range-thumb {
-  transform: translateY(2px) scaleX(-1);
-}
-
-.is-vertical > input[type="range"].has-box-indicator::-moz-range-thumb {
-  transform: translateY(0px) scaleX(-1);
-}
-
-select:focus {
-  color: var(--button-highlight);
-  background-color: var(--dialog-blue);
-}
-select:focus option {
-  color: #000;
-  background-color: #fff;
-}
-
-select:active {
-  background-image: url("./icon/button-down-active.svg");
 }
 
 a {
@@ -667,6 +410,9 @@ a:focus {
   outline: 1px dotted var(--link-blue);
 }
 
+/*/////////////////////////////*/
+/* Jordan Scales Treeview css. */
+/*/////////////////////////////*/
 ul.tree-view {
   display: block;
   background: var(--button-highlight);
@@ -674,33 +420,27 @@ ul.tree-view {
   padding: 6px;
   margin: 0;
 }
-
 ul.tree-view li {
   list-style-type: none;
 }
-
 ul.tree-view a {
   text-decoration: none;
   color: #000;
 }
-
 ul.tree-view a:focus {
   background-color: var(--dialog-blue);
   color: var(--button-highlight);
 }
-
 ul.tree-view ul,
 ul.tree-view li {
   margin-top: 3px;
 }
-
 ul.tree-view ul {
   margin-left: 16px;
   padding-left: 16px;
   /* Goes down too far */
   border-left: 1px dotted #808080;
 }
-
 ul.tree-view ul > li {
   position: relative;
 }
@@ -713,7 +453,6 @@ ul.tree-view ul > li::before {
   width: 12px;
   border-bottom: 1px dotted #808080;
 }
-
 /* Cover the bottom of the left dotted border */
 ul.tree-view ul > li:last-child::after {
   content: "";
@@ -725,21 +464,17 @@ ul.tree-view ul > li:last-child::after {
   width: 8px;
   background: var(--button-highlight);
 }
-
 ul.tree-view details {
   margin-top: 0;
 }
-
 ul.tree-view details[open] summary {
   margin-bottom: 0;
 }
-
 ul.tree-view ul details > summary:before {
   margin-left: -22px;
   position: relative;
   z-index: 1;
 }
-
 ul.tree-view details > summary:before {
   text-align: center;
   display: block;
@@ -753,39 +488,18 @@ ul.tree-view details > summary:before {
   padding-left: 1px;
   background-color: #fff;
 }
-
 ul.tree-view details[open] > summary:before {
   content: "-";
 }
-
 ul.tree-view details > summary::marker,
 ul.tree-view details > summary::-webkit-details-marker {
   content: "";
 }
 
-pre {
-  display: block;
-  background: var(--button-highlight);
-  box-shadow: var(--border-field);
-  padding: 12px 8px;
-  margin: 0;
-}
-
-code,
-code * {
-  font-family: monospace;
-}
-
-summary:focus {
-  outline: 1px dotted #000000;
-}
-
-/**
- *
- * Jordan Scales' <thatjdanisso.cool> scrollbar css.
- * As explained by Connor Gallagher via comments.
- *
- **/
+/*////////////////////////////////////////////////*/
+/* Jordan Scales scrollbar css.                   */
+/* As explained by Connor Gallagher via comments. */
+/*////////////////////////////////////////////////*/
 
 /* Let's use the webkit engine to render elements inside the users browser */
 ::-webkit-scrollbar {

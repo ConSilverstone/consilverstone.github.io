@@ -23,14 +23,6 @@
 	text-align: left;
 	}
 
-	/* html will inherit from .window in style.css first then we add these changes here */
-.window p {
-	padding-left: 10px;
-}
-.window h4 {
-	padding-left: 10px;
-}
-
 .main-email {
 	text-align: left;
 	}
@@ -74,6 +66,7 @@ body {
 /*///////////////////*/
 /* page(s) structure */
 /*///////////////////*/
+/* Index Structure */
 @media all and (min-width: 600px) {
 	.aside {
 		flex: 1 0 0;
@@ -96,6 +89,7 @@ body {
 		order: 4;
 	}
 }
+/* Email Structure */
 @media all and (min-width: 800px) {
 	.main-email {
 		flex: 3;
@@ -132,7 +126,7 @@ body {
 /*/////////////////*/
 /* Taskbar nav CSS */
 /*/////////////////*/
-.taskbar-div {
+.taskbar-navbar {
 	/* Flexable display for footer column and say clear of floating elements */
 	content: "";
 	display: flex;
