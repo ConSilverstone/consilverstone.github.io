@@ -6,6 +6,73 @@
     <link rel="stylesheet" href="./static/main.css">
     <link rel="stylesheet" href="https://unpkg.com/98.css">
     <link rel="icon" type="image/png" href="./media/images/phishingicon.png">
+    
+    <style>
+        .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.box {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+        }
+.box-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.box2 {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.box-content2 {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+    </style>
 </head>
 <body>
 <!-- Top Page Banner -->
@@ -39,7 +106,7 @@
     <article class="main-email">
       <div class="window" style="width: 100%">
         <div class="title-bar">
-          <div class="title-bar-text">Password leak</div>
+          <div class="title-bar-text">Holiday Photos</div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
@@ -49,18 +116,20 @@
         <!-- email content-->
       <div class="email-box">
         <div class="email-header">
-          <div class="email-header-from">From: <span>ITsupport@macrosift.com</span></div>
-          <div class="email-header-to">To: <span>Employee</span></div>
-          <div class="email-header-date">Date: <span>Today</span></div>
+          <div class="email-header-from">From: <span>Mum@Gmail.com</span></div>
+          <div class="email-header-to">To: <span>You</span></div>
+          <div class="email-header-date">Date: <span>Yesterday</span></div>
         </div>
         <div class="email-body">
-          <p>Dear User,</p>
-          <p>Unfortunately we have had a data breach and believe your account has been affected. </p>
-          <p>We reccommend that you should change your passwords if they are the same as this account.</p>
-          <p>please check out https://haveibeenpwned.com/</p>
+          <p>Hi son,</p>
+          <p>Remember the family trip last year.<br>
+          This is a link to a selection of photos from the trip<br>
+          <a class="popup" onmouseover="hover_function()" onmouseout="hover_function()" href="">Photos
+          <span class="popuptext" id="myPopup">HTTPS://Photos.tinyurl.com</span>
+          </a></p>
          
-          <p>We apologise sincerely .</p>
-          <p>Disaster recovery team</p>
+          <p>From</p>
+          <p>Mum</p>
         </div> 
       </div>
 
@@ -96,7 +165,7 @@
             </tr>
             <tr>
               <td>4</td>
-              <td>PLACEHOLDER EMAIL</td>
+              <td><a href="email-4.html">Holiday Photos</a></td>
               <td>☑</td>
             </tr>
             <tr>
@@ -118,8 +187,36 @@
   <!-- button-->
   <div class="button-cont">
     <button id ="button1" class="button button2">Smells fishy</button>
+    <div id="box" class="box">
+	
+        <div class="box-content">
+		
+		    <img src="Images\Tick.png" style="width:30px; hieght:30px; display:inline;">
+            <h2 style="display:inline;">Correct</h2>
+			<img src="Images\Tick.png" style="width:30px; hieght:30px; display:inline;">
+            <p>Well done you managed to spot that the email was fake</p>
+			
+            <button id="closePopup" >Close</button>
+        </div>
+    </div>
+      
     <button id ="button2" class="button button2">A OK!</button>
-  </div>">
+    <div class="box-content2">  
+		
+		    <img src="Images\Cross.png" style="width:30px; hieght:30px; display:inline;">
+			<h2 style="display:inline;">Incorrect</h2>
+			<img src="Images\Cross.png" style="width:30px; hieght:30px; display:inline;">
+            <p>Unlucky you didn't manage to spot that the email is fake</p>
+			
+            <button id="closePopup2" onclick="removeButtons()">Close</button>
+			
+        </div>
+    </div>
+  </div>
+    <div id="message" style= "display: none;">
+	<p>Answer has been submitted</p>
+
+</div>
   
   <script>
 
@@ -148,7 +245,57 @@ cookie_answer = previousAnswers[1].split(",");
         document.cookie = "answers=" + cookie_answer.join(",");
         window.location.href = "email-5.html"
     }
-    
+
+function hover_function() {
+  var box = document.getElementById("myPopup");
+  box.classList.toggle("show");
+}
+
+function openbox() {
+		const openPopup = document.getElementById('button1');
+        const closePopup = document.getElementById('closePopup');
+        const box = document.getElementById('box');
+
+        openPopup.addEventListener('click', () => {
+            box.style.display = 'flex';
+        });
+
+        closePopup.addEventListener('click', () => {
+            box.style.display = 'none';
+			document.getElementById('button1').style.visibility = 'hidden';
+			document.getElementById('button2').style.visibility = 'hidden';
+            document.getElementById('message').style.display = 'block';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === box) {
+                box.style.display = 'none';
+            }
+        });
+}
+function openbox2()	{	
+		const openPopup2 = document.getElementById('button2');
+        const closePopup2 = document.getElementById('closePopup2');
+        const box2 = document.getElementById('box2');
+
+        openPopup2.addEventListener('click', () => {
+            box2.style.display = 'flex';
+        });
+
+        closePopup2.addEventListener('click', () => {
+            box2.style.display = 'none';
+			document.getElementById('button1').style.visibility = 'hidden';
+			document.getElementById('button2').style.visibility = 'hidden';
+			document.getElementById('message').style.display = 'block';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === box2) {
+                box2.style.display = 'none';
+            }
+        });
+}
+      
       </script>
 </body>
 </html>
