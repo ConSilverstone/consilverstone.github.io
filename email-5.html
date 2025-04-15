@@ -100,7 +100,7 @@
             </tr>
             <tr>
               <td>4</td>
-              <td>PLACEHOLDER EMAIL</td>
+              <td><a href="email-4.html">Holiday Photos</a></td>
               <td>☑</td>
             </tr>
             <tr>
@@ -153,6 +153,84 @@ cookie_answer = previousAnswers[1].split(",");
         window.location.href = "email-6.html"
     }
     
-      </script>
+    </script>
+
+  <div class="taskbar-buffer-div">
+    <!--
+      Buffer div to keep the taskbar away from body elements.
+    -->
+  </div>
+
+  <nav class="taskbar-navbar">
+    <!-- Divided into thirds, left is empty, middle for less relivent hyperlinks, right for the clock js element -->
+    <div class="taskbar-column-edge">
+      <!--
+        Left section taskbar divider
+        Used for the start menu element
+      -->
+      <a>Start menu here</a> <!--placeholder text-->
+    </div>
+    <!--Start of central elements-->
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 1-->
+      <div class="taskbar-button-in-use">
+        <img src="./media/images/Home_Icon.png" alt="Home Icon">
+        <span class="button-text"><a href="index.html">Home</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 2-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/tutorial_icon.png" alt="Tutorial Icon">
+        <span class="button-text"><a href="tutorial.html">Tutorial</a></div></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 3-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/phishingicon.png" alt="Play Icon">
+        <span class="button-text"><a href="email-1.html">Play</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 4-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/checklist-41335_1280.png" alt="Scoreboard Icon">
+        <span class="button-text"><a href="scoreboard.html">Scoreboard</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 5-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/cc.svg" alt="CC Logo">
+        <span class="button-text"><a href="sources.html">Attribution</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 6-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/team.png" alt="Team Icon">
+        <span class="button-text"><a href="team.html">Credits</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 7-->
+
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 8-->
+      
+    </div>
+    <!--End of central elements-->
+    <div class="taskbar-column-edge">
+      <!--
+      Right section taskbar divider
+      Used for the clock widget element
+    -->
+      <div id="clock">8:10:45</div>
+
+      <script src="./scripts/taskbar_clock.js"></script>
+    </div>
+  </nav>
 </body>
 </html>

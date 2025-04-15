@@ -72,6 +72,15 @@ body {
 		flex: 1 0 0;
 	}
 }
+@media (max-width: 800px) {
+	/* When reaching 600px drop text hyperlinks for taskbar */
+	.taskbar-button-in-use .button-text {
+		display: none;
+	}
+	.taskbar-button-unused .button-text {
+		display: none;
+	}
+}
 @media all and (min-width: 800px) {
 	.main {
 		flex: 3 0px;
