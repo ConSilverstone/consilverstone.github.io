@@ -147,7 +147,8 @@ body {
 	content: "";
 	display: flex;
 	clear: both;
-	
+	font-family: "Pixelated MS Sans Serif", arial;
+	font-size: 25px;
 	/* Lets make it so that the bar is always displayed at bottom regardless of window size */
 	position: fixed;
 	/* bottom left in ensure so space to the bottom or left hand side */
@@ -195,11 +196,8 @@ body {
 	overflow: hidden;
 	/* gap between elements (image and text) */
 	gap: 10px;
-	/* make it look like a taskbar tab*/
-	border-top: 2px solid black;
-	border-left: 2px solid black;
-	border-bottom: 2px solid white;
-	border-right: 2px solid white;
+	/* Make it look like a taskbar tab we can actually call the variables from style.css as it is defined first */
+	box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
 }
 .taskbar-button-unused {
 	/* size related to volume of column we want on screen and the clearence for contents before
@@ -217,13 +215,10 @@ body {
 	overflow: hidden;
 	/* gap between elements (image and text) */
 	gap: 10px;
-	/* make it look like a taskbar tab*/
-	border-top: 2px solid white;
-	border-left: 2px solid white;
-	border-bottom: 2px solid black;
-	border-right: 2px solid black;
+	/* Make it look like a taskbar tab we can actually call the variables from style.css as it is defined first */
+	box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
-/* The descendant selector is in case "button-in-use" is used for a purpose other than the task bar*/
+/* The descendant selector is in case "taskbar-button-in-use" is used for a purpose other than the task bar*/
 .taskbar-column-center-space .taskbar-button-in-use img {
 	/* maintain consistant size */
 	width: 100%;
@@ -232,7 +227,7 @@ body {
 	object-fit: cover;
 	flex-shrink: 0; /* Prevents it from shrinking smaller than 30px */
 }
-/* The class overloading is in case "button-in-use" is used for a purpose other than the task bar*/
+/* The descendant selector is in case "taskbar-button-unused" is used for a purpose other than the task bar*/
 .taskbar-column-center-space .taskbar-button-unused img {
 	/* maintain consistant size */
 	width: 100%;
@@ -241,17 +236,24 @@ body {
 	object-fit: cover;
 	flex-shrink: 0; /* Prevents it from shrinking smaller than 30px */
 }
+.taskbar-column-edge img {
+	/* This will likely just refer to the start button, we want to scale it to an appropriate size */
+	width: 30%;
+}
 
 /*///////////////////////////*/
-/* Javascript Element Design */
+/* Javascript Clock Element  */
+/* Connor Gallagher          */
 /*///////////////////////////*/
 #clock {
-	font-size: 15px;
+	font-size: 30px;
 	/* width set to 95% to avoid touching browser edge, using % as it is more scalable */
 	width: 95%;
 	padding: 5px;
 	position: relative;
 	text-align: center;
+	/* Since style.css already defined the "Pixelated MS Sans Serif" font we can actually call it here, assuming that style.css is loaded first */
+	font-family: "Pixelated MS Sans Serif", arial;
 	/* Create the intended box look for windows 98*/
 	border-top: 2px solid black;
 	border-left: 2px solid black;
