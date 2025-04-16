@@ -1,34 +1,162 @@
 <!DOCTYPE html>
 
-<html>
-<head>
-    <title>You've got mail!</title>
-    <link rel="stylesheet" href="./static/main.css">
-    <link rel="icon" type="image/png" href="./media/images/phishingicon.png">
-</head>
-<body>
-    <div class="footerDiv">
-	<a href="index.html">Home</a>
-	<a href="team.html">Scoreboard</a>
-    </div>
-    
-    <h1>Development Team</h1>
-    	<h3 class="authors">Connor Gallagher</p>
-    	<p class="authors">Website Prototype</p>
-    <hr>
-    	<h3 class="authors">David Martin</p>
-    <hr>
-    	<h3 class="authors">Harry Maxwell </p>
-    	<p class="authors">Meeting Minute Taker</p>
-    <hr>
-    	<h3 class="authors">Bartlomiej Murawski</p>
-    <hr>
-    	<h3 class="authors">Jason Stewart</p>
-</body>
-<footer>
-	<div class="footerDiv">
-	    <a href="sources.html">Attribution</a>
-  	    <a href="team.html">Credits</a>
-  	</div>
-</footer>
+<html lang="en-GB">
+    <head>
+        <title>You've got mail!</title>
+        <!-- Windows 98 creation source: https://jdan.github.io/98.css/ -->
+        <!-- This is the more general layout while main make specific changes per page -->
+        <link rel="stylesheet" href="./static/style.css">
+        <link rel="stylesheet" href="./static/main.css">
+        <link rel="icon" type="image/png" href="./media/images/phishingicon.png">
+    </head>
+
+
+    <body>
+
+        <!-- Top Page Banner -->
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
+                    <h1>You've got mail!</h1>
+                </div>
+            </div>
+            <div class="window-body">
+                <p>The online phishing minigame.</p>
+            </div>
+        </div>
+
+		<!-- Start of html content -->
+		<div class="wrapper">
+			<article class="main">
+                <!--Create window elements-->
+				<div class="window">
+					<div class="title-bar">
+						<div class="title-bar-text">
+							Development Team
+						</div>
+						<div class="title-bar-controls">
+							<button aria-label="Minimize"></button>
+							<button aria-label="Maximize"></button>
+							<button aria-label="Close"></button>
+						</div>
+					</div>
+				<!--Content to be displayed, inside window-->
+					<h3>Connor Gallagher</h3>
+						<ul>
+							<li>Website Prototype</li>
+							<li>Website Banner</li>
+							<li>Background Creation and Image Sourcing</li>
+							<li>Home Page</li>
+							<li>Taskbar Creation and Design</li>
+							<li>1999 Taskbar Clock Scripting</li>
+							<li>style.css Integration</li>
+							<li>Attribution Page</li>
+							<li>Credits Page</li>
+							<li>Email 5 & 6 Contents</li>
+						</ul>
+					<hr>
+					<h3>Harry Maxwell</h3>
+						<ul>
+							<li>Meeting Minute Taker</li>
+							<li>Play/Email Page Prototype</li>
+							<li>Email Page Design</li>
+							<li>Score/Cookie Scripting</li>
+							<li>Summary Page</li>
+							<li>Email 1 & 3 Contents</li>
+						</ul>
+					<hr>
+					<h3>Jason Stewart</h3>
+						<ul>
+							<li>Tutorial Page</li>
+							<li>Pop-Up Scripts</li>
+							<li>Email Button Scripting</li>
+							<li>Email 2 & 4 Contents</li>
+						</ul>
+					<hr>
+					<h3>With Support From</h3>
+						<ul>
+							<li>David Martin</li>
+							<li>Bartlomiej Murawski</li>
+						</ul>
+            </article>
+        </div>
+
+        <div class="taskbar-buffer-div">
+			<!--
+				Buffer div to keep the taskbar away from body elements.
+			-->
+		</div>
+
+        <nav class="taskbar-navbar">
+			<!-- Divided into thirds, left is empty, middle for less relivent hyperlinks, right for the clock js element -->
+			<div class="taskbar-column-edge">
+				<!--
+					Left section taskbar divider
+					Used for the start menu element
+				-->
+				<a>Start menu here</a> <!--placeholder text-->
+			</div>
+			<!--Start of central elements-->
+			<div class="taskbar-column-center-space">
+				<!--Middle section taskbar divider 1-->
+				<div class="taskbar-button-in-use">
+					<img src="./media/images/Home_Icon.png" alt="Home Icon">
+					<a href="index.html">Home</a>
+				</div>
+			</div>
+			<div class="taskbar-column-center-space">
+				<!--Middle section taskbar divider 2-->
+				<div class="taskbar-button-unused">
+					<img src="./media/images/tutorial_icon.png" alt="Tutorial Icon">
+					<a href="tutorial.html">Tutorial</a>
+				</div>
+			</div>
+			<div class="taskbar-column-center-space">
+				<!--Middle section taskbar divider 3-->
+				<div class="taskbar-button-unused">
+					<img src="./media/images/phishingicon.png" alt="Play Icon">
+					<a href="email-1.html">Play</a>
+				</div>
+			</div>
+			<div class="taskbar-column-center-space">
+				<!--Middle section taskbar divider 4-->
+				<div class="taskbar-button-unused">
+					<img src="./media/images/checklist-41335_1280.png" alt="Scoreboard Icon">
+					<a href="scoreboard.html">Scoreboard</a>
+				</div>
+			</div>
+			<div class="taskbar-column-center-space">
+				<!--Middle section taskbar divider 5-->
+				<div class="taskbar-button-unused">
+					<img src="./media/images/cc.svg" alt="CC Logo">
+					<a href="sources.html">Attribution</a>
+				</div>
+			</div>
+			<div class="taskbar-column-center-space">
+				<!--Middle section taskbar divider 6-->
+				<div class="taskbar-button-unused">
+					<img src="./media/images/team.png" alt="Team Icon">
+					<a href="team.html">Credits</a>
+				</div>
+			</div>
+			<div class="taskbar-column-center-space">
+				<!--Middle section taskbar divider 7-->
+		
+			</div>
+			<div class="taskbar-column-center-space">
+				<!--Middle section taskbar divider 8-->
+				
+			</div>
+			<!--End of central elements-->
+			<div class="taskbar-column-edge">
+				<!--
+				Right section taskbar divider
+				Used for the clock widget element
+			-->
+				<div id="clock">8:10:45</div>
+		
+				<script src="./scripts/taskbar_clock.js"></script>
+			</div>
+		</nav>
+    </body>
 </html>
