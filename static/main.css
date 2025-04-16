@@ -148,7 +148,7 @@ body {
 	display: flex;
 	clear: both;
 	font-family: "Pixelated MS Sans Serif", arial;
-	font-size: 25px;
+	font-size: 24px;
 	/* Lets make it so that the bar is always displayed at bottom regardless of window size */
 	position: fixed;
 	/* bottom left in ensure so space to the bottom or left hand side */
