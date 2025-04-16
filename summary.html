@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-<head>
+  <head>
     <title>You've got mail!</title>
-    <link rel="stylesheet" href="./static/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/98.css">
-    <link rel="icon" type="image/png" href="./media/phishingicon.png">
-</head>
+      <!-- Windows 98 window elements source: https://jdan.github.io/98.css/ -->
+      <!-- This is the more general layout while main make specific changes per page -->
+      <link rel="stylesheet" href="./static/style.css">
+      <link rel="stylesheet" href="./static/main.css">
+      <link rel="icon" type="image/png" href="./media/images/phishingicon.png">
+  </head>
 <body>
 
   <!-- Top Page Banner -->
@@ -17,19 +19,6 @@
     </div>
     <div class="window-body">
       <h3 id="score"></h3>
-    </div>
-  </div>
-<!-- 98.css upper tabs -->
-<div class="window-body">
-    <menu role="tablist" class="multirows">
-      <li role="tab"><a href="#tabs">Tutorial</a></li>
-      <li role="tab"><a href="#tabs">examples</a></li>
-      <li role="tab"><a href="#tabs">scoreboard</a></li>
-    </menu>
-    <div class="window" role="tabpanel">
-      <div class="window-body">
-        	
-      </div>
     </div>
   </div>
 
@@ -112,7 +101,81 @@
     </aside>
   </div>
 
+  <div class="taskbar-buffer-div">
+    <!--
+      Buffer div to keep the taskbar away from body elements.
+    -->
+  </div>
+
+      <nav class="taskbar-navbar">
+    <!-- Divided into thirds, left is empty, middle for less relivent hyperlinks, right for the clock js element -->
+    <div class="taskbar-column-edge">
+      <!--
+      Left section taskbar divider
+      Used for the start menu element
+      -->
+      <a href="email-1.html"><img src="./media/images/98_Start_Unpressed.png" alt="Fake Start Button"></a>
+    </div>
+    <!--Start of central elements-->
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 1-->
+      <div class="taskbar-button-unused">
+      <img src="./media/images/Home_Icon.png" alt="Home Icon">
+      <span class="button-text"><a href="index.html">Home</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 2-->
+      <div class="taskbar-button-unused">
+      <img src="./media/images/tutorial_icon.png" alt="Tutorial Icon">
+      <span class="button-text"><a href="tutorial.html">Tutorial</a></div></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 3-->
+      <div class="taskbar-button-unused">
+      <img src="./media/images/phishingicon.png" alt="Play Icon">
+      <span class="button-text"><a href="email-1.html">Play</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 4-->
+      <div class="taskbar-button-unused">
+      <img src="./media/images/team.png" alt="Team Icon">
+      <span class="button-text"><a href="team.html">Credits</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 5-->
+      <div class="taskbar-button-unused">
+      <img src="./media/images/cc.svg" alt="CC Logo">
+      <span class="button-text"><a href="sources.html">Attribution</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 6-->
+
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 7-->
   
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 8-->
+      
+    </div>
+    <!--End of central elements-->
+    <div class="taskbar-column-edge">
+      <!--
+      Right section taskbar divider
+      Used for the clock widget element
+    -->
+      <div id="clock">8:10:45</div>
+  
+      <script src="./scripts/taskbar_clock.js"></script>
+    </div>
+  </nav>
+
   <script>
 
   var correctAnswers = ["A","B","A","A","B","A"];
