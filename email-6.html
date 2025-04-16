@@ -4,7 +4,7 @@
 <head>
     <title>You've got mail!</title>
     <link rel="stylesheet" href="./static/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="stylesheet" href="./static/style.css">
     <link rel="icon" type="image/png" href="./media/images/phishingicon.png">
 </head>
 <body>
@@ -19,19 +19,6 @@
     <p>The online phishing minigame.</p>
   </div>
 </div>
-<!-- 98.css upper tabs -->
-<div class="window-body">
-    <menu role="tablist" class="multirows">
-      <li role="tab"><a href="#tabs">Tutorial</a></li>
-      <li role="tab"><a href="#tabs">examples</a></li>
-      <li role="tab"><a href="#tabs">scoreboard</a></li>
-    </menu>
-    <div class="window" role="tabpanel">
-      <div class="window-body">
-        	
-      </div>
-    </div>
-  </div>
 
   <div class="wrapper">
 
@@ -70,51 +57,75 @@
 
       <!--Aside box table is integrated-->
 
-    <aside class="aside aside-email">
-      <div class="sunken-panel" style="height: 100%; width: 100%;">
-        <table class="interactive">
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>Subject</th>
-              <th>read</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td><a href="email-1.html">Need credentials</a></td>
-              <td>☑</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td><a href="email-2.html">Password leak</a></td>
-              <td>☑</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td><a href="email-3.html">Account Info</a></td>
-              <td>☑</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td><a href="email-4.html">Holiday Photos</a></td>
-              <td>☑</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td><a href="email-5.html">Christmas Party Planning</a></td>
-              <td>☑</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td><a href="email-6.html">Check Engine?</a></td>
-              <td>☑</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </aside>
+      <aside class="aside aside-email">
+        <div class="window">
+          <div class="title-bar">
+            <div class="title-bar-text">Inbox</div>
+          </div>
+          <div class="window-body">
+            <div class="sunken-panel">
+              <table class="interactive">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Subject</th>
+                    <th>read</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><a href="email-1.html">Need credentials</a></td>
+                    <td>
+                      <input type="checkbox" id="example1">
+                      <label for="example1"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><a href="email-2.html">Password leak</a></td>
+                    <td>
+                      <input type="checkbox" id="PasswordLeak">
+                      <label for="PasswordLeak"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><a href="email-3.html">Account Info</a></td>
+                    <td>
+                      <input type="checkbox" id="AccountInfo">
+                      <label for="AccountInfo"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td><a href="email-4.html">Holiday Photos</a></td>
+                    <td>
+                      <input type="checkbox" id="HolidayPhotos">
+                      <label for="HolidayPhotos"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td><a href="email-5.html">Christmas Party Planning</a></td>
+                    <td>
+                      <input type="checkbox" id="ChristmasPartyPlanning">
+                      <label for="ChristmasPartyPlanning"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td><a href="email-6.html">Check Engine?</a></td>
+                    <td>
+                      <input type="checkbox" id="CheckEngine?">
+                      <label for="CheckEngine?"></label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </aside>
   </div>
 
   <!-- button-->

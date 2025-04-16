@@ -4,7 +4,7 @@
 <head>
     <title>You've got mail!</title>
     <link rel="stylesheet" href="./static/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="stylesheet" href="./static/style.css">
     <link rel="icon" type="image/png" href="./media/images/phishingicon.png">
 </head>
 <body>
@@ -19,19 +19,6 @@
     <p>The online phishing minigame.</p>
   </div>
 </div>
-<!-- 98.css upper tabs -->
-<div class="window-body">
-    <menu role="tablist" class="multirows">
-      <li role="tab"><a href="#tabs">Tutorial</a></li>
-      <li role="tab"><a href="#tabs">examples</a></li>
-      <li role="tab"><a href="#tabs">scoreboard</a></li>
-    </menu>
-    <div class="window" role="tabpanel">
-      <div class="window-body">
-        	
-      </div>
-    </div>
-  </div>
 
   <div class="wrapper">
 
@@ -68,51 +55,75 @@
 
       <!--Aside box table is integrated-->
 
-    <aside class="aside aside-email">
-      <div class="sunken-panel" style="height: 100%; width: 100%;">
-        <table class="interactive">
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>Subject</th>
-              <th>read</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td><a href="email-1.html">Need credentials</a></td>
-              <td>☑</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td><a href="email-2.html">Password leak</a></td>
-              <td>☑</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td><a href="email-3.html">Account Info</a></td>
-              <td>☑</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td><a href="email-4.html">Holiday Photos</a></td>
-              <td>☑</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td><a href="email-5.html">Christmas Party Planning</a></td>
-              <td>☑</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td><a href="email-6.html">Check Engine?</a></td>
-              <td>☑</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </aside>
+      <aside class="aside aside-email">
+        <div class="window">
+          <div class="title-bar">
+            <div class="title-bar-text">Inbox</div>
+          </div>
+          <div class="window-body">
+            <div class="sunken-panel">
+              <table class="interactive">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Subject</th>
+                    <th>read</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><a href="email-1.html">Need credentials</a></td>
+                    <td>
+                      <input type="checkbox" id="example1">
+                      <label for="example1"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><a href="email-2.html">Password leak</a></td>
+                    <td>
+                      <input type="checkbox" id="PasswordLeak">
+                      <label for="PasswordLeak"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><a href="email-3.html">Account Info</a></td>
+                    <td>
+                      <input type="checkbox" id="AccountInfo">
+                      <label for="AccountInfo"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td><a href="email-4.html">Holiday Photos</a></td>
+                    <td>
+                      <input type="checkbox" id="HolidayPhotos">
+                      <label for="HolidayPhotos"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td><a href="email-5.html">Christmas Party Planning</a></td>
+                    <td>
+                      <input type="checkbox" id="ChristmasPartyPlanning">
+                      <label for="ChristmasPartyPlanning"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td><a href="email-6.html">Check Engine?</a></td>
+                    <td>
+                      <input type="checkbox" id="CheckEngine?">
+                      <label for="CheckEngine?"></label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </aside>
   </div>
 
   <!-- button-->
@@ -226,5 +237,83 @@ function openbox2()	{
   }
     
       </script>
+
+  <div class="taskbar-buffer-div">
+    <!--
+      Buffer div to keep the taskbar away from body elements.
+    -->
+  </div>
+
+  <nav class="taskbar-navbar">
+    <!-- Divided into thirds, left is empty, middle for less relivent hyperlinks, right for the clock js element -->
+    <div class="taskbar-column-edge">
+      <!--
+        Left section taskbar divider
+        Used for the start menu element
+      -->
+      <a>Start menu here</a> <!--placeholder text-->
+    </div>
+    <!--Start of central elements-->
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 1-->
+      <div class="taskbar-button-in-use">
+        <img src="./media/images/Home_Icon.png" alt="Home Icon">
+        <span class="button-text"><a href="index.html">Home</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 2-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/tutorial_icon.png" alt="Tutorial Icon">
+        <span class="button-text"><a href="tutorial.html">Tutorial</a></div></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 3-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/phishingicon.png" alt="Play Icon">
+        <span class="button-text"><a href="email-1.html">Play</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 4-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/checklist-41335_1280.png" alt="Scoreboard Icon">
+        <span class="button-text"><a href="scoreboard.html">Scoreboard</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 5-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/cc.svg" alt="CC Logo">
+        <span class="button-text"><a href="sources.html">Attribution</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 6-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/team.png" alt="Team Icon">
+        <span class="button-text"><a href="team.html">Credits</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 7-->
+
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 8-->
+      
+    </div>
+    <!--End of central elements-->
+    <div class="taskbar-column-edge">
+      <!--
+      Right section taskbar divider
+      Used for the clock widget element
+    -->
+      <div id="clock">8:10:45</div>
+
+      <script src="./scripts/taskbar_clock.js"></script>
+    </div>
+  </nav>
 </body>
 </html>
