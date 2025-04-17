@@ -133,13 +133,13 @@
 	
         <div class="box-content">
 		
-		    <img src="/media/images/Tick.png" style="width:30px; height:30px; display:inline;">
-            <h2 style="display:inline;">Correct</h2>
-			<img src="/media/images/Tick.png" style="width:30px; height:30px; display:inline;">
-            <p>Well done you managed to spot that the email was fake</p>
+		<img src="/media/images/Tick.png" style="width:30px; height:30px; display:inline;">
+            	<h2 style="display:inline;">Correct</h2>
+		<img src="/media/images/Tick.png" style="width:30px; height:30px; display:inline;">
+            	<p>Well done you managed to spot that the email was fake</p>
 			
-            <button id="closePopup" >Close</button>
-        </div>
+        <button id="closePopup" >Close</button>
+	</div>
     </div>
 
 	
@@ -174,13 +174,11 @@ document.getElementById("button2")?.addEventListener("click", button2Function);
 function button1Function() {
     cookie_answer.push("A");
     document.cookie = "answers=" + cookie_answer.join(",");
-    window.location.href = "email-2.html"
 }
 
 function button2Function() {
     cookie_answer.push("B");
     document.cookie = "answers=" + cookie_answer.join(",");
-    window.location.href = "email-2.html"
 }
 function openbox() {
       const openPopup = document.getElementById('button1');
