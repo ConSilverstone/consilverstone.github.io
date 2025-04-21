@@ -14,7 +14,7 @@
 
 /*///////////////////////////////////////////////////////////////////////////////////////////*/
 /* :root A set of variables that hold values or the result of calculations,                  */
-/* reason being it is more clean to include it here rather than reference it multiple times. */
+/* reason being it is more clean to include it here rather than create it multiple times.    */
 /*///////////////////////////////////////////////////////////////////////////////////////////*/
 :root {
   /* Color */
@@ -30,6 +30,7 @@
   --link-blue: #0000ff;
 
   /* Spacing */
+  /* --element-spacing used both in margins and padding */
   --element-spacing: 8px;
   --grouped-button-spacing: 4px;
   --grouped-element-spacing: 6px;
@@ -104,6 +105,7 @@
 /* Jorden Scales                                                                    */
 /* Basically just applying the new "Pixelated MS Sans Serif" font to everything!    */
 /* removed .window from list as (though more accurate) it was hard to read - Connor */
+/* .window changes regarding text made at around line 276                           */
 /*//////////////////////////////////////////////////////////////////////////////////*/
 button,
 label,
@@ -114,6 +116,7 @@ option,
 ul.tree-view,
 .title-bar {
     font-family: "Pixelated MS Sans Serif", Arial;
+    /* We want that jagged early 2000s pixels, to tell the browser to leave the text alone! */
     -webkit-font-smoothing: none;
     font-size: 20px;
 }
@@ -180,51 +183,51 @@ input[type="reset"]:disabled,
   padding: 3px;
 }
 
-a {
-    /* Lets change the cursor if it hovers over a link.
-	  We need to backtrack out of this directory "../" and into media to find the .cur file.
-	  In case of failure to load mouse use computer default. - Connor
-	  */
-    cursor: url("../media/Original black custom - link select.cur"), default;
-}
+/*///////////////////////////////////////////////////////////*/
+/* Jordan Scales title-bar css.                              */
+/* Comments/Explanations/Modifications by Connor Gallagher   */
+/*///////////////////////////////////////////////////////////*/
 
-/*///////////////////////////////////////////////////////////*/
-/* Jordan Scales title-bar css. Modified by Connor Gallagher */
-/*///////////////////////////////////////////////////////////*/
+/* This is the header to every windows 98 window, 
+banner is also basically a window with a big .title-bar and small window */
 .title-bar {
+  /* We can use an in built function called linear gradient to calculate a color range from dark blue to light */
   background: linear-gradient(
+    /* 90 degrees to flip it vertically so the colour travels from left to right */
     90deg,
+    /* Use :root variables */
     var(--dialog-blue),
     var(--dialog-blue-light)
   );
   padding: 3px 2px 3px 3px;
+  /* Stretch as needed (Flexbox) */
   display: flex;
+  /* Push items to edges left - centre - right */
+  /* Helps when introducing the button elements (close, minimise, maximise, etc.) */
   justify-content: space-between;
+  /* Put text, media etc. in the center */
   align-items: center;
 }
-.title-bar.inactive {
-  background: linear-gradient(
-    90deg,
-    var(--dialog-gray),
-    var(--dialog-gray-light)
-  );
-}
 .title-bar-text {
+  /* Hopefully self explanatory, if we use text in the window header use these variables */ 
   font-weight: bold;
   color: white;
   letter-spacing: 0;
+  /* Text didn't really touch edges in windows 98 to pull the text right from left edge. */
   margin-right: 24px;
 }
 .title-bar-controls {
+  /* Let all buttons bend with the windows if page is resized */
   display: flex;
 }
-/* Edits made here */
+/* Edit made here */
 .title-bar-controls button {
   /* Let use the public domain cursor for the buttons. 
 	We need to backtrack out of this directory "../" and into media to find the .cur file.
 	In case of failure to load mouse use computer default.
 	*/
     cursor: url("../media/Original black custom - normal select.cur"), default;
+    /* Let the svg images be touching the borders inside container, fit to size of image */
     padding: 0;
     display: block;
     min-width: 16px;
@@ -263,68 +266,58 @@ a {
   background-position: top 3px left 4px;
 }
 
-.status-bar {
-  margin: 0px 1px;
-  display: flex;
-  gap: 1px;
-}
-
-.status-bar-field {
-  box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px #808080;
-  flex-grow: 1;
-  padding: 2px 3px;
-  margin: 0;
-}
-
+/*////////////////////////////////*/
+/* Connor's window additions      */
+/*////////////////////////////////*/
 .window-body {
+  /* Keep the window-body away from unrelated elements */
   margin: var(--element-spacing);
 }
 /* Connor Gallagher Addition */
 .window h1, h2, h3, h4, h5, h6, p {
   /* text was touching window border, this is to fix that */
-  padding-left: 10px;
+  padding-left: var(--element-spacing);
 }
 .window a {
-  /* Nice big readable hyperlinks */
+  /* Nice big readable hyperlinks, need to include font family as window would use arial normally */
   font-family: "Pixelated MS Sans Serif", Arial;
+  /* Keep the jagged look */
   -webkit-font-smoothing: none;
   font-size: 20px;
-  padding-left: 10px;
+  /* Make sure the text does not touch the border here as well */
+  padding-left: var(--element-spacing);
+}
+a {
+  /* Lets change the cursor if it hovers over a link.
+  We need to backtrack out of this directory "../" and into media to find the .cur file.
+  In case of failure to load mouse use computer default. - Connor
+  */
+  cursor: url("../media/Original black custom - link select.cur"), default;
 }
 
-fieldset {
-  border-image: url("./icon/groupbox-border.svg") 2;
-  padding: calc(2 * var(--border-width) + var(--element-spacing));
-  padding-block-start: var(--element-spacing);
-  margin: 0;
-}
-
-legend {
-  background: var(--surface);
-}
+/*//////////////////////////////////////////////////*/
+/* Jordan Scales toggle elements css.               */
+/* Used in checkbox but was designed for            */
+/* options, groupbox, and textboxes as well         */
+/*//////////////////////////////////////////////////*/
 
 .field-row {
   display: flex;
   align-items: center;
 }
-
 [class^="field-row"] + [class^="field-row"] {
   margin-top: var(--grouped-element-spacing);
 }
-
 .field-row > * + * {
   margin-left: var(--grouped-element-spacing);
 }
-
 .field-row-stacked {
   display: flex;
   flex-direction: column;
 }
-
 .field-row-stacked * + * {
   margin-top: var(--grouped-element-spacing);
 }
-
 label {
   display: inline-flex;
   align-items: center;
@@ -394,92 +387,6 @@ a:focus {
   outline: 1px dotted var(--link-blue);
 }
 
-/*/////////////////////////////*/
-/* Jordan Scales Treeview css. */
-/*/////////////////////////////*/
-ul.tree-view {
-  display: block;
-  background: var(--button-highlight);
-  box-shadow: var(--border-field);
-  padding: 6px;
-  margin: 0;
-}
-ul.tree-view li {
-  list-style-type: none;
-}
-ul.tree-view a {
-  text-decoration: none;
-  color: #000;
-}
-ul.tree-view a:focus {
-  background-color: var(--dialog-blue);
-  color: var(--button-highlight);
-}
-ul.tree-view ul,
-ul.tree-view li {
-  margin-top: 3px;
-}
-ul.tree-view ul {
-  margin-left: 16px;
-  padding-left: 16px;
-  /* Goes down too far */
-  border-left: 1px dotted #808080;
-}
-ul.tree-view ul > li {
-  position: relative;
-}
-ul.tree-view ul > li::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: -16px;
-  top: 6px;
-  width: 12px;
-  border-bottom: 1px dotted #808080;
-}
-/* Cover the bottom of the left dotted border */
-ul.tree-view ul > li:last-child::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: -20px;
-  top: 7px;
-  bottom: 0px;
-  width: 8px;
-  background: var(--button-highlight);
-}
-ul.tree-view details {
-  margin-top: 0;
-}
-ul.tree-view details[open] summary {
-  margin-bottom: 0;
-}
-ul.tree-view ul details > summary:before {
-  margin-left: -22px;
-  position: relative;
-  z-index: 1;
-}
-ul.tree-view details > summary:before {
-  text-align: center;
-  display: block;
-  float: left;
-  content: "+";
-  border: 1px solid #808080;
-  width: 8px;
-  height: 9px;
-  line-height: 8px;
-  margin-right: 5px;
-  padding-left: 1px;
-  background-color: #fff;
-}
-ul.tree-view details[open] > summary:before {
-  content: "-";
-}
-ul.tree-view details > summary::marker,
-ul.tree-view details > summary::-webkit-details-marker {
-  content: "";
-}
-
 /*////////////////////////////////////////////////*/
 /* Jordan Scales scrollbar css.                   */
 /* As explained by Connor Gallagher via comments. */
@@ -533,53 +440,6 @@ ul.tree-view details > summary::-webkit-details-marker {
 ::-webkit-scrollbar-button:horizontal:end {
   width: 16px;
   background-image: url("./icon/button-right.svg");
-}
-
-/*///////////////////////////////////////////////////////*/
-/* Jordan Scales Tabpanel css. (Here for legacy versions)*/
-/* As explained by Connor Gallagher via comments.        */
-/*///////////////////////////////////////////////////////*/
-.window[role=tabpanel] {
-  position: relative;
-  z-index: 2;
-}
-menu[role=tablist] {
-  position: relative;
-  margin: 0 0 -2px 0;
-  text-indent: 0;
-  list-style-type: none;
-  display: flex;
-  padding-left: 3px;
-}
-menu[role=tablist] > li {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  box-shadow: var(--border-tab);
-  z-index: 1;
-}
-menu[role=tablist] > li[aria-selected=true] {
-  padding-bottom: 2px;
-  margin-top: -2px;
-  background-color: var(--surface);
-  position: relative;
-  z-index: 8;
-  margin-left: -3px;
-}
-menu[role=tablist] > li > a {
-  display: block;
-  color: #222;
-  margin: 6px;
-  text-decoration: none;
-}
-menu[role=tablist] > li[aria-selected=true] > a:focus {
-  outline: none;
-}
-menu[role=tablist] > li > a:focus {
-  outline: 1px dotted #222;
-}
-menu[role=tablist].multirows > li {
-  flex-grow: 1;
-  text-align: center;
 }
 
 /*///////////////////////////////////////////////////////*/
