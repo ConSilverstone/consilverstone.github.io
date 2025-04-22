@@ -128,7 +128,7 @@
 
   <!-- button-->
   <div class="button-cont">
-    <button id ="button1" class="button button2" type="button1" onclick="openbox()">Smells fishy</button>
+    <button id ="button1" class="button button2" type="button1">Smells fishy</button>
     <div id="box" class="box">
 	
         <div class="box-content">
@@ -144,7 +144,7 @@
 
 	
       
-    <button id ="button2" class="button button2" type="button2" onclick="openbox2()">A OK!</button>
+    <button id ="button2" class="button button2" type="button2" >A OK!</button>
     <div id="box2" class="box2">
     <div class="box-content2">  
 		
@@ -167,9 +167,25 @@
 
 // create a variable for the cookie answer
 var cookie_answer = [];
+var cookie = document.cookie;
 
-document.getElementById("button1")?.addEventListener("click", button1Function);
-document.getElementById("button2")?.addEventListener("click", button2Function);
+//extract the cookie value into a dictionary
+var previousAnswers = cookie.split("=");
+	  
+//split the cookie value into each answer
+cookie_answer = previousAnswers[1].split(",");
+
+  document.getElementById("button1").addEventListener("click", () => {
+    console.log("Button 1 clicked");
+      button1Function(); 
+      correctPopup();         
+  });
+	  
+ document.getElementById("button2").addEventListener("click", () => {
+    console.log("Button 2 clicked");
+      button2Function(); 
+      incorrectPopup();        
+  });
 
 function button1Function() {
     cookie_answer.push("A");
@@ -191,9 +207,7 @@ function openbox() {
 
           closePopup.addEventListener('click', () => {
               box.style.display = 'none';
-        document.getElementById('button1').style.visibility = 'hidden';
-        document.getElementById('button2').style.visibility = 'hidden';
-              document.getElementById('message').style.display = 'block';
+	      window.location.href = "email-2.html"
           });
 
           window.addEventListener('click', (event) => {
@@ -213,9 +227,7 @@ function openbox() {
 
           closePopup2.addEventListener('click', () => {
               box2.style.display = 'none';
-        document.getElementById('button1').style.visibility = 'hidden';
-        document.getElementById('button2').style.visibility = 'hidden';
-        document.getElementById('message').style.display = 'block';
+       	  window.location.href = "email-2.html"
           });
 
           window.addEventListener('click', (event) => {
