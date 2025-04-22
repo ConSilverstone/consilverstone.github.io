@@ -201,7 +201,7 @@ function openbox() {
           const closePopup = document.getElementById('closePopup');
           const box = document.getElementById('box');
 
-              box.style.display = 'flex';
+           box.style.display = 'flex';
 
           closePopup.addEventListener('click', () => {
               box.style.display = 'none';
@@ -210,8 +210,10 @@ function openbox() {
 
   }
   function openbox2()	{	
-  
+  	  const closePopup = document.getElementById('closePopup')
           const box2 = document.getElementById('box2');
+	  
+	  box.style.display = 'flex';
 	  
           closePopup2.addEventListener('click', () => {
               box2.style.display = 'none';
