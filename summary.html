@@ -28,7 +28,7 @@
     <article class="main-email">
       <div class="window" style="width: 100%">
         <div class="title-bar">
-          <div class="title-bar-text">Summary</div>
+          <div class="title-bar-text">Need credentials</div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
@@ -55,55 +55,49 @@
       <!--Aside box table is integrated-->
 
     <aside class="aside aside-email">
-      <div class="window">
-        <div class="title-bar">
-          <div class="title-bar-text">Inbox</div>
-        </div>
-        <div class="window-body">
-          <div class="sunken-panel">
-            <table class="interactive">
-              <thead>
-                <tr>
-                  <th>No.</th>
-                  <th>Subject</th>
-                  <th>read</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Need Credentials</td>
-                  <td><button id ="email-1" class="button button2">Show</button></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Password Leak</td>
-                  <td><button id ="email-2" class="button button2">Show</button></td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>URGENT</td>
-                  <td><button id ="email-3" class="button button2">Show</button></td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Holiday Photos</td>
-                  <td><button id ="email-4" class="button button2">Show</button></td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Christmas Party Planning</td>
-                  <td><button id ="email-5" class="button button2">Show</button></td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>Check Engine?</td>
-                  <td><button id ="email-6" class="button button2">Show</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div class="sunken-panel" style="height: 100%; width: 100%;">
+        <table class="interactive">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Subject</th>
+              <th>read</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><a href="email-1.html">Need credentials</a></td>
+              <td><button id ="email-1" class="button button2">Correct!</button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Password Leak</td>
+              <td><button id ="email-2" class="button button2">Correct!</button></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>URGENT</td>
+              <td><button id ="email-3" class="button button2">Correct!</button></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>PLACEHOLDER EMAIL</td>
+              <td><button id ="email-4" class="button button2">Correct!</button></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Christmas Party Planning</td>
+              <td><button id ="email-5" class="button button2">Correct!</button></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Check Engine?</td>
+              <td><button id ="email-6" class="button button2">Correct!</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </aside>
   </div>
 
@@ -182,14 +176,118 @@
     </div>
   </nav>
 
-    <!----------------------------------------------------------------------------------------
-      Script Calls, async as they do not depend on each other to run (can be run concurrently)
-      loaded last in <body> to optimise load times
-    ------------------------------------------------------------------------------------------>
-    <!-- Take the user's cookie as an input and runs it over a loop if A/B is correct or incorrect then displays a score -->
-    <script src="./scripts/awnsers.js" async></script>
-    <!-- Uses href anchors to change that appears in the email body -->
-    <script src="./scripts/content_switch.js" async></script>
+  <script>
 
+    /* A = Phishy, B = A OK! */
+  var correctAnswers = ["A","B","B","A","A","B"];
+    
+  var totalScore = 0
+
+  //store cookie in a variable
+  var cookie = document.cookie;
+
+  //extract the cookie value into a dictionary
+  var previousAnswers = cookie.split("=");
+
+  //split the cookie value into each answer
+  cookie_answer = previousAnswers[1].split(",");
+      
+
+    // Calculate the total score
+    for (var i = 0; i < cookie_answer.length; i++) {
+      if (cookie_answer[i] == correctAnswers[i]) {
+          totalScore++;
+        console.log(cookie_answer[i], correctAnswers[i])
+      }
+  }
+
+    
+
+  // Update the header with the total score
+  document.getElementById("score").textContent = `You scored ${totalScore}/${correctAnswers.length}`;
+
+  // update email box when clicked
+  document.getElementById("email-1").addEventListener("click", function() {
+      document.getElementById("email-box").innerHTML =  `
+      <div class="email-header">
+          <div class="email-header-from">From: <span>ITsupport@macrosift.com</span></div>
+          <div class="email-header-to">To: <span>Employee</span></div>
+          <div class="email-header-date">Date: <span>Today</span></div>
+        </div>
+        <div class="email-body">
+          <p>Dear User,</p>
+          <p>We need to check your password as it may have been in a data breach, please send it to me.</p>
+          <p>Please do so urgently.</p>
+          <p>IT</p>
+        </div>  
+        
+        `; });
+
+    document.getElementById("email-2").addEventListener("click", function() {
+      document.getElementById("email-box").innerHTML =  `
+      <div class="email-header">
+          <div class="email-header-from">From: <span>ITsupport@macrosift.com</span></div>
+          <div class="email-header-to">To: <span>Employee</span></div>
+          <div class="email-header-date">Date: <span>Today</span></div>
+        </div>
+        <div class="email-body">
+          <p>Dear User,</p>
+          <p>Unfortunately we have had a data breach and believe your account has been affected. </p>
+          <p>We reccommend that you should change your passwords if they are the same as this account.</p>
+          <p>please check out https://haveibeenpwned.com/</p>
+         
+          <p>We apologise sincerely .</p>
+          <p>Disaster recovery team</p>
+        </div>   
+        `; });
+
+      
+    document.getElementById("email-5").addEventListener("click", function() {
+      document.getElementById("email-box").innerHTML =  `
+      <div class="email-box">
+        <div class="email-header">
+          <div class="email-header-from">From: <span>xhprxt@guerrillamail.com</span></div>
+          <div class="email-header-to">To: <span>Employee</span></div>
+          <div class="email-header-date">Date: <span>Today</span></div>
+        </div>
+        <div class="email-body">
+          <p>Dear sales team,</p>
+          <p>We are once again hosting our annual christmas ball at the East Side Club, and we need you help to make it a success!
+             Planning is well underway, and we are looking for volunteers to help with the event. In exchange for £30 coupons at
+             GAP. If this is something that would interest you download a copy of the signup sheet in this email. <br>
+             <br>
+             Thanks again,
+             HR Team
+          </p>
+          <!--Create a line break from body to attachments-->
+          <hr/>
+          <img class="attachments" src="./media/images/document.png" alt="Document">
+        </div> 
+      </div>
+        `; });
+
+          document.getElementById("email-6").addEventListener("click", function() {
+      document.getElementById("email-box").innerHTML =  `
+       <div class="email-box">
+        <div class="email-header">
+          <div class="email-header-from">From: <span>AlexJohnson@hotmail.com</span></div>
+          <div class="email-header-to">To: <span>Employee</span></div>
+          <div class="email-header-date">Date: <span>1 Week Ago</span></div>
+        </div>
+        <div class="email-body">
+          <p>Hey,</p>
+          <p>It's Alex. I recently purchased a vehicle from your dealership. 
+             Unfortunately, The engine has been making unusual noises, 
+             and the check engine light has turned on after only a week of use. <br>
+             Can I swing by for your mechanics to check it out? I hope that this isn't going to be a repeat occurence... <br>
+             <br>
+             Thanks, <br>
+             Alex Johnson
+          </p>
+        </div> 
+      </div>
+        `; });
+
+</script>
 </body>
 </html>

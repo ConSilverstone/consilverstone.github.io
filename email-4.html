@@ -1,259 +1,346 @@
 <!DOCTYPE html>
 
 <html lang="en-GB">
-  <head>
-      <title>You've got mail!</title>
-      <!-- Windows 98 window elements source: https://jdan.github.io/98.css/ -->
-      <!-- This is the more general layout while main make specific changes per page -->
-      <link rel="stylesheet" href="./static/style.css">
-      <link rel="stylesheet" href="./static/main.css">
-      <!--Jason's popup stylings -->
-      <link rel="stylesheet" href="./static/popup.css">
-      <link rel="icon" type="image/png" href="./media/images/phishingicon.png">
+<head>
+    <title>You've got mail!</title>
+		<!-- Windows 98 window elements source: https://jdan.github.io/98.css/ -->
+		<!-- This is the more general layout while main make specific changes per page -->
+		<link rel="stylesheet" href="./static/style.css">
+		<link rel="stylesheet" href="./static/main.css">
+    <link rel="icon" type="image/png" href="./media/images/phishingicon.png">
+    
+    <style>
+        .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-  </head>
-  <body>
-  <!-- Top Page Banner -->
-  <div class="window">
-    <div class="title-bar">
-      <div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
-        <h1>You've got mail!</h1>
-      </div>
-    </div>
-    <div class="window-body">
-      <p>The online phishing minigame.</p>
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+</style>
+</head>
+<body>
+<!-- Top Page Banner -->
+<div class="window">
+  <div class="title-bar">
+    <div class="title-bar-text" style="max-width: fit-content; margin-inline: auto;">
+      <h1>You've got mail!</h1>
     </div>
   </div>
+  <div class="window-body">
+    <p>The online phishing minigame.</p>
+  </div>
+</div>
 
-  <div class="wrapper">
+<div class="wrapper">
 
-      <!-- main email body-->
-      <article class="main-email">
-        <div class="window" style="width: 100%">
+    <!-- main email body-->
+    <article class="main-email">
+      <div class="window" style="width: 100%">
+        <div class="title-bar">
+          <div class="title-bar-text">Holiday Photos</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+        <!-- email content-->
+      <div class="email-box">
+        <div class="email-header">
+          <div class="email-header-from">From: <span>Mum@Gmail.com</span></div>
+          <div class="email-header-to">To: <span>You</span></div>
+          <div class="email-header-date">Date: <span>Yesterday</span></div>
+        </div>
+        <div class="email-body">
+          <p>Hi son,</p>
+          <p>Remember the family trip last year.<br>
+          This is a link to a selection of photos from the trip<br>
+          <a class="popup" onmouseover="hover_function()" onmouseout="hover_function()" href="">Photos
+          <span class="popuptext" id="myPopup">HTTPS://Photos.tinyurl.com</span>
+          </a></p>
+         
+          <p>From</p>
+          <p>Mum</p>
+        </div> 
+      </div>
+
+    </article>
+
+      <!--Aside box table is integrated-->
+
+      <aside class="aside aside-email">
+        <div class="window">
           <div class="title-bar">
-            <div class="title-bar-text">Holiday Photos</div>
-            <div class="title-bar-controls">
-              <button aria-label="Minimize"></button>
-              <button aria-label="Maximize"></button>
-              <button aria-label="Close"></button>
-            </div>
+            <div class="title-bar-text">Inbox</div>
           </div>
-          <!-- email content-->
-        <div class="email-box">
-          <div class="email-header">
-            <div class="email-header-from">From: <span>Mum@Gmail.com</span></div>
-            <div class="email-header-to">To: <span>You</span></div>
-            <div class="email-header-date">Date: <span>Yesterday</span></div>
+          <div class="window-body">
+            <div class="sunken-panel">
+              <table class="interactive">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Subject</th>
+                    <th>read</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><a href="email-1.html">Need credentials</a></td>
+                    <td>
+                      <input type="checkbox" id="example1">
+                      <label for="example1"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><a href="email-2.html">Password leak</a></td>
+                    <td>
+                      <input type="checkbox" id="PasswordLeak">
+                      <label for="PasswordLeak"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><a href="email-3.html">Account Info</a></td>
+                    <td>
+                      <input type="checkbox" id="AccountInfo">
+                      <label for="AccountInfo"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td><a href="email-4.html">Holiday Photos</a></td>
+                    <td>
+                      <input type="checkbox" id="HolidayPhotos">
+                      <label for="HolidayPhotos"></label>
+                    </td>
+                  </tr>
+                <tr>
+                  <td>5</td>
+                  <td><a href="email-5.html">Christmas Party Planning</a></td>
+                  <td>
+                    <input type="checkbox" id="ChristmasPartyPlanning">
+                    <label for="ChristmasPartyPlanning"></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td><a href="email-6.html">Check Engine?</a></td>
+                  <td>
+                    <input type="checkbox" id="CheckEngine?">
+                    <label for="CheckEngine?"></label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="email-body">
-            <p>Hi son,</p>
-            <p>Remember the family trip last year.<br>
-            This is a link to a selection of photos from the trip<br>
-            <a class="popup" onmouseover="hover_function()" onmouseout="hover_function()" href="">Photos
-            <span class="popuptext" id="myPopup">HTTPS://Photos.tinyurl.com</span>
-            </a></p>
-          
-            <p>From</p>
-            <p>Mum</p>
-          </div> 
         </div>
+    </aside>
+</div>
 
-      </article>
+  <!-- button-->
+<div class="button-cont">
+    <button id ="button1" class="button button2" type="button1" onclick="openbox()">Smells fishy</button>
+    <div id="box" class="box">
+	
+        <div class="box-content">
+		
+		<img src="/media/images/Tick.png" style="width:30px; height:30px; display:inline;">
+            	<h2 style="display:inline;">Correct</h2>
+		<img src="/media/images/Tick.png" style="width:30px; height:30px; display:inline;">
+            	<p>Well done you managed to spot that the email was fake</p>
+			
+            <button id="closePopup" >Close</button>
+        </div>
+    </div>
 
-        <!--Aside box table is integrated-->
+	
+      
+    <button id ="button2" class="button button2" type="button2" onclick="openbox2()">A OK!</button>
+    <div id="box2" class="box2">
+    <div class="box-content2">  
+		
+		<img src="/media/images/Cross.png" style="width:30px; height:30px; display:inline;">
+		<h2 style="display:inline;">Incorrect</h2>
+		<img src="/media/images/Cross.png" style="width:30px; height:30px; display:inline;">
+            	<p>Unlucky you didn't manage to spot that the email is fake</p>
+			
+            <button id="closePopup2">Close</button>
+			
+        </div>
+	    
+	</div>
+  </div>
+    <div id="message" style= "display: none;">
+	<p>Answer has been submitted</p>
 
-        <aside class="aside aside-email">
-          <div class="window">
-            <div class="title-bar">
-              <div class="title-bar-text">Inbox</div>
-            </div>
-            <div class="window-body">
-              <div class="sunken-panel">
-                <table class="interactive">
-                  <thead>
-                    <tr>
-                      <th>No.</th>
-                      <th>Subject</th>
-                      <th>read</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td><a href="email-1.html">Need credentials</a></td>
-                      <td>
-                        <input type="checkbox" id="example1">
-                        <label for="example1"></label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td><a href="email-2.html">Password leak</a></td>
-                      <td>
-                        <input type="checkbox" id="PasswordLeak">
-                        <label for="PasswordLeak"></label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td><a href="email-3.html">Account Info</a></td>
-                      <td>
-                        <input type="checkbox" id="AccountInfo">
-                        <label for="AccountInfo"></label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td><a href="email-4.html">Holiday Photos</a></td>
-                      <td>
-                        <input type="checkbox" id="HolidayPhotos">
-                        <label for="HolidayPhotos"></label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td><a href="email-5.html">Christmas Party Planning</a></td>
-                      <td>
-                        <input type="checkbox" id="ChristmasPartyPlanning">
-                        <label for="ChristmasPartyPlanning"></label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td><a href="email-6.html">Check Engine?</a></td>
-                      <td>
-                        <input type="checkbox" id="CheckEngine?">
-                        <label for="CheckEngine?"></label>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-        </aside>
+</div>
+  
+  <script>
+
+
+// create a variable for the cookie answer
+var cookie_answer = [];
+var cookie = "";
+cookie = document.cookie;
+
+//extract the cookie value into a dictionary
+var previousAnswers = cookie.split("=");
+	  
+//split the cookie value into each answer
+cookie_answer = previousAnswers[1].split(",");
+
+  document.getElementById("button1").addEventListener("click", () => {
+    console.log("Button 1 clicked");
+      button1Function(); 
+      openbox();         
+  });
+	  
+ document.getElementById("button2").addEventListener("click", () => {
+    console.log("Button 2 clicked");
+      button2Function(); 
+      openbox2();        
+  });
+
+function button1Function() {
+    cookie_answer.push("A");
+    document.cookie = "answers=" + cookie_answer.join(",");
+}
+
+function button2Function() {
+    cookie_answer.push("B");
+    document.cookie = "answers=" + cookie_answer.join(",");
+}
+	  
+function openbox() {
+          const closePopup = document.getElementById('closePopup');
+          const box = document.getElementById('box');
+
+           box.style.display = 'flex';
+
+          closePopup.addEventListener('click', () => {
+              box.style.display = 'none';
+	      window.location.href = "email-5.html"
+          });
+
+  }
+  function openbox2()	{	
+  	  const closePopup2 = document.getElementById('closePopup2')
+          const box2 = document.getElementById('box2');
+	  
+	  box2.style.display = 'flex';
+	  
+          closePopup2.addEventListener('click', () => {
+              box2.style.display = 'none';
+       	  window.location.href = "email-5.html"
+          });
+  }
+//Hover function to show a different link	  
+ function hover_function() {
+     var box = document.getElementById("myPopup");
+     box.classList.toggle("show");
+   }
+
+  </script>
+
+  <div class="taskbar-buffer-div">
+    <!--
+      Buffer div to keep the taskbar away from body elements.
+    -->
   </div>
 
-    <!-- button-->
-  <div class="button-cont">
-      <button id ="button1" class="button button2" type="button1" onclick="openbox()">Smells fishy</button>
-      <div id="box" class="box">
-    
-          <div class="box-content">
-      
-      <img src="/media/images/Tick.png" style="width:30px; height:30px; display:inline;">
-                <h2 style="display:inline;">Correct</h2>
-      <img src="/media/images/Tick.png" style="width:30px; height:30px; display:inline;">
-                <p>Well done you managed to spot that the email was fake</p>
-        
-              <button id="closePopup" >Close</button>
-          </div>
-      </div>
-
-    
-        
-      <button id ="button2" class="button button2" type="button2" onclick="openbox2()">A OK!</button>
-      <div id="box2" class="box2">
-      <div class="box-content2">  
-      
-      <img src="/media/images/Cross.png" style="width:30px; height:30px; display:inline;">
-      <h2 style="display:inline;">Incorrect</h2>
-      <img src="/media/images/Cross.png" style="width:30px; height:30px; display:inline;">
-                <p>Unlucky you didn't manage to spot that the email is fake</p>
-        
-              <button id="closePopup2">Close</button>
-        
-          </div>
-        
-    </div>
-    </div>
-      <div id="message" style= "display: none;">
-    <p>Answer has been submitted</p>
-
-  </div>
-
-    <div class="taskbar-buffer-div">
+  <nav class="taskbar-navbar">
+    <!-- Divided into thirds, left is empty, middle for less relivent hyperlinks, right for the clock js element -->
+    <div class="taskbar-column-edge">
       <!--
-        Buffer div to keep the taskbar away from body elements.
+        Left section taskbar divider
+        Used for the start menu element
       -->
+      <a href="email-1.html"><img src="./media/images/98_Start_Unpressed.png" alt="Fake Start Button"></a>
     </div>
+    <!--Start of central elements-->
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 1-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/Home_Icon.png" alt="Home Icon">
+        <span class="button-text"><a href="index.html">Home</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 2-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/tutorial_icon.png" alt="Tutorial Icon">
+        <span class="button-text"><a href="tutorial.html">Tutorial</a></div></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 3-->
+      <div class="taskbar-button-in-use">
+        <img src="./media/images/phishingicon.png" alt="Play Icon">
+        <span class="button-text"><a href="email-1.html">Play</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 4-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/team.png" alt="Team Icon">
+        <span class="button-text"><a href="team.html">Credits</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 5-->
+      <div class="taskbar-button-unused">
+        <img src="./media/images/cc.svg" alt="CC Logo">
+        <span class="button-text"><a href="sources.html">Attribution</a></span>
+      </div>
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 6-->
 
-    <nav class="taskbar-navbar">
-      <!-- Divided into thirds, left is empty, middle for less relivent hyperlinks, right for the clock js element -->
-      <div class="taskbar-column-edge">
-        <!--
-          Left section taskbar divider
-          Used for the start menu element
-        -->
-        <a href="email-1.html"><img src="./media/images/98_Start_Unpressed.png" alt="Fake Start Button"></a>
-      </div>
-      <!--Start of central elements-->
-      <div class="taskbar-column-center-space">
-        <!--Middle section taskbar divider 1-->
-        <div class="taskbar-button-unused">
-          <img src="./media/images/Home_Icon.png" alt="Home Icon">
-          <span class="button-text"><a href="index.html">Home</a></span>
-        </div>
-      </div>
-      <div class="taskbar-column-center-space">
-        <!--Middle section taskbar divider 2-->
-        <div class="taskbar-button-unused">
-          <img src="./media/images/tutorial_icon.png" alt="Tutorial Icon">
-          <span class="button-text"><a href="tutorial.html">Tutorial</a></div></span>
-        </div>
-      </div>
-      <div class="taskbar-column-center-space">
-        <!--Middle section taskbar divider 3-->
-        <div class="taskbar-button-in-use">
-          <img src="./media/images/phishingicon.png" alt="Play Icon">
-          <span class="button-text"><a href="email-1.html">Play</a></span>
-        </div>
-      </div>
-      <div class="taskbar-column-center-space">
-        <!--Middle section taskbar divider 4-->
-        <div class="taskbar-button-unused">
-          <img src="./media/images/team.png" alt="Team Icon">
-          <span class="button-text"><a href="team.html">Credits</a></span>
-        </div>
-      </div>
-      <div class="taskbar-column-center-space">
-        <!--Middle section taskbar divider 5-->
-        <div class="taskbar-button-unused">
-          <img src="./media/images/cc.svg" alt="CC Logo">
-          <span class="button-text"><a href="sources.html">Attribution</a></span>
-        </div>
-      </div>
-      <div class="taskbar-column-center-space">
-        <!--Middle section taskbar divider 6-->
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 7-->
 
-      </div>
-      <div class="taskbar-column-center-space">
-        <!--Middle section taskbar divider 7-->
+    </div>
+    <div class="taskbar-column-center-space">
+      <!--Middle section taskbar divider 8-->
+      
+    </div>
+    <!--End of central elements-->
+    <div class="taskbar-column-edge">
+      <!--
+      Right section taskbar divider
+      Used for the clock widget element
+    -->
+      <div id="clock">8:10:45</div>
 
-      </div>
-      <div class="taskbar-column-center-space">
-        <!--Middle section taskbar divider 8-->
-        
-      </div>
-      <!--End of central elements-->
-      <div class="taskbar-column-edge">
-        <!--
-        Right section taskbar divider
-        Used for the clock widget element
-      -->
-        <div id="clock">8:10:45</div>
-
-        <script src="./scripts/taskbar_clock.js"></script>
-      </div>
-    </nav>
-
-    <!----------------------------------------------------------------------------------------
-      Script Calls, async as they do not depend on each other to run (can be run concurrently)
-      loaded last in <body> to optimise load times
-    ------------------------------------------------------------------------------------------>
-    <!-- Uses cookies to track correct and incorrect answers -->
-    <script src="./scripts/cookie_score.js" async></script>
-    <!-- "A OK!" & "Sounds Phishy" call this script to display the result of the user's answer -->
-    <script src="./scripts/pop-up_box.js" async></script>
-    
-  </body>
+      <script src="./scripts/taskbar_clock.js"></script>
+    </div>
+  </nav>
+</body>
 </html>
