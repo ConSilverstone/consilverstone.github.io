@@ -105,7 +105,7 @@
                   </tr>
                   <tr>
                     <td>5</td>
-                    <td><a href="email-5.html">Christmas Party Planning</a></td>
+                    <td><a href="email-5.html">Party Planning</a></td>
                     <td>
                       <input type="checkbox" id="ChristmasPartyPlanning">
                       <label for="ChristmasPartyPlanning"></label>
@@ -128,7 +128,6 @@
 
   <!-- button-->
   <div class="button-cont">
-    <button id ="button1" class="button button2" type="button1" onclick="openbox()">Smells fishy</button>
     <div id="box" class="box">
 	
         <div class="box-content">
@@ -144,10 +143,9 @@
 
 	
       
-    <button id ="button2" class="button button2" type="button2" onclick="openbox2()">A OK!</button>
+
     <div id="box2" class="box2">
     <div class="box-content2">  
-		
 		    <img src="/media/images/Cross.png" style="width:30px; height:30px; display:inline;">
 			<h2 style="display:inline;">Incorrect</h2>
 			<img src="/media/images/Cross.png" style="width:30px; height:30px; display:inline;">
@@ -168,8 +166,8 @@
 // create a variable for the cookie answer
 var cookie_answer = [];
 
-document.getElementById("button1")?.addEventListener("click", button1Function);
-document.getElementById("button2")?.addEventListener("click", button2Function);
+document.getElementById("button1")?.addEventListener("click", button1Function, openbox1);
+document.getElementById("button2")?.addEventListener("click", button2Function, openbox2);
 
 function button1Function() {
     cookie_answer.push("A");
