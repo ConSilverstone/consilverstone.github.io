@@ -170,15 +170,21 @@
 
 // create a variable for the cookie answer
 var cookie_answer = [];
-var cookie = "";
-cookie = document.cookie;
+var cookie = document.cookie;
 
-
-//extract the cookie value into a dictionary
+// extract the cookie value into a dictionary
 var previousAnswers = cookie.split("=");
-	  
-//split the cookie value into each answer
-cookie_answer = previousAnswers[1].split(",");
+
+// Catch for if the cookie doesn't exist
+if (previousAnswers.length > 1 && previousAnswers[1]) {
+    var value = previousAnswers[1];
+    cookie_answer = value.split(","); // Safe now
+    // do something with cookie_answer
+    console.log("Cookie answers:", cookie_answer);
+} else {
+    // fallback if no cookie is present
+    console.log("No valid cookie found.");
+}
 
   document.getElementById("button1").addEventListener("click", () => {
     console.log("Button 1 clicked");
