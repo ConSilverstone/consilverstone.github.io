@@ -155,6 +155,17 @@
   </div>
 	
  <script>
+
+ // create a variable for the cookie answer
+var cookie_answer = [];
+
+var cookie = document.cookie;
+
+//extract the cookie value into a dictionary
+var previousAnswers = cookie.split("=");
+
+//split the cookie value into each answer
+cookie_answer = previousAnswers[1].split(",");
   
   document.getElementById("button1").addEventListener("click", () => {
       button1Function(); 
