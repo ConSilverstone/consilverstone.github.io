@@ -196,9 +196,11 @@
     for (var i = 0; i < cookie_answer.length; i++) {
       if (cookie_answer[i] == correctAnswers[i]) {
           totalScore++;
+        console.log(cookie_answer[i], correctAnswers[i])
       }
   }
-  document.cookie = "answers=";
+
+    
 
   // Update the header with the total score
   document.getElementById("score").textContent = `You scored ${totalScore}/${correctAnswers.length}`;
