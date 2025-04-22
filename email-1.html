@@ -217,23 +217,12 @@ function openbox() {
           }); 
   }
   function openbox2()	{	
-      const openPopup2 = document.getElementById('button2');
-          const closePopup2 = document.getElementById('closePopup2');
+  
           const box2 = document.getElementById('box2');
-
-          openPopup2.addEventListener('click', () => {
-              box2.style.display = 'flex';
-          });
-
+	  
           closePopup2.addEventListener('click', () => {
               box2.style.display = 'none';
        	  window.location.href = "email-2.html"
-          });
-
-          window.addEventListener('click', (event) => {
-              if (event.target === box2) {
-                  box2.style.display = 'none';
-              }
           });
   }
 
