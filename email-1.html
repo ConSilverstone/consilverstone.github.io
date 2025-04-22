@@ -167,7 +167,9 @@
 
 // create a variable for the cookie answer
 var cookie_answer = [];
-var cookie = document.cookie;
+var cookie = "";
+cookie = document.cookie;
+
 
 //extract the cookie value into a dictionary
 var previousAnswers = cookie.split("=");

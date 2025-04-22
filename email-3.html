@@ -143,12 +143,10 @@
             <button id="closePopup" >Close</button>
         </div>
     </div>
-
-	
       
     <button id ="button2" class="button button2" type="button2" onclick="openbox2()">A OK!</button>
     <div id="box2" class="box2">
-   	 <div class="box-content2">  
+   	 <div class="box-content2">
 
 	        <img src="/media/images/Tick.png" style="width:30px; height:30px; display:inline;">
        		<h2 style="display:inline;">Correct</h2>
@@ -169,7 +167,8 @@
 
 // create a variable for the cookie answer
 var cookie_answer = [];
-var cookie = document.cookie;
+var cookie = "";
+cookie = document.cookie;
 
 //extract the cookie value into a dictionary
 var previousAnswers = cookie.split("=");
