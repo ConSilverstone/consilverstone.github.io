@@ -169,78 +169,65 @@
 	<p>Answer has been submitted</p>
 
 </div>
-  <script>
+    <script>
 
-  // create a variable for the cookie answer
+// create a variable for the cookie answer
 var cookie_answer = [];
-
-//store cookie in a variable
 var cookie = document.cookie;
 
 //extract the cookie value into a dictionary
 var previousAnswers = cookie.split("=");
-
+	  
 //split the cookie value into each answer
 cookie_answer = previousAnswers[1].split(",");
-    
-    document.getElementById("button1")?.addEventListener("click", button1Function);
-    document.getElementById("button2")?.addEventListener("click", button2Function);
-    
-    function button1Function() {
-        cookie_answer.push("A");
-        document.cookie = "answers=" + cookie_answer.join(",");
-    }
-    
-    function button2Function() {
-        cookie_answer.push("B");
-        document.cookie = "answers=" + cookie_answer.join(",");
-    }
-    function openbox() {
-    const openPopup = document.getElementById('button1');
-    const closePopup = document.getElementById('closePopup');
-    const box = document.getElementById('box');
 
-    openPopup.addEventListener('click', () => {
-        box.style.display = 'flex';
-    });
+  document.getElementById("button1").addEventListener("click", () => {
+    console.log("Button 1 clicked");
+      button1Function(); 
+      openbox();         
+  });
+	  
+ document.getElementById("button2").addEventListener("click", () => {
+    console.log("Button 2 clicked");
+      button2Function(); 
+      openbox2();        
+  });
 
-    closePopup.addEventListener('click', () => {
-        box.style.display = 'none';
-        document.getElementById('button1').style.visibility = 'hidden';
-        document.getElementById('button2').style.visibility = 'hidden';
-        document.getElementById('message').style.display = 'block';
-    });
+function button1Function() {
+    cookie_answer.push("A");
+    document.cookie = "answers=" + cookie_answer.join(",");
+}
 
-    window.addEventListener('click', (event) => {
-        if (event.target === box) {
-            box.style.display = 'none';
-        }
-    });
+function button2Function() {
+    cookie_answer.push("B");
+    document.cookie = "answers=" + cookie_answer.join(",");
+}
+	  
+function openbox() {
+          const closePopup = document.getElementById('closePopup');
+          const box = document.getElementById('box');
+
+           box.style.display = 'flex';
+
+          closePopup.addEventListener('click', () => {
+              box.style.display = 'none';
+	      window.location.href = "email-2.html"
+          });
+
   }
-function openbox2()	{	
-    const openPopup2 = document.getElementById('button2');
-    const closePopup2 = document.getElementById('closePopup2');
-    const box2 = document.getElementById('box2');
-
-    openPopup2.addEventListener('click', () => {
-        box2.style.display = 'flex';
-    });
-
-    closePopup2.addEventListener('click', () => {
-        box2.style.display = 'none';
-        document.getElementById('button1').style.visibility = 'hidden';
-        document.getElementById('button2').style.visibility = 'hidden';
-        document.getElementById('message').style.display = 'block';
-    });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === box2) {
-                box2.style.display = 'none';
-            }
-        });
+  function openbox2()	{	
+  	  const closePopup2 = document.getElementById('closePopup2')
+          const box2 = document.getElementById('box2');
+	  
+	  box.style.display = 'flex';
+	  
+          closePopup2.addEventListener('click', () => {
+              box2.style.display = 'none';
+       	  window.location.href = "email-2.html"
+          });
   }
-    
-      </script>
+
+  </script>
 
   <div class="taskbar-buffer-div">
     <!--
