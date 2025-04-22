@@ -1,8 +1,5 @@
-/* initialise cookie, we want to make sure that a cookie called "awnsers=" 
-   doesn't already exist and if it does then we don't want to wipe it with a fresh one */
-if (!document.cookie.split('; ').find(row => row.startsWith('answers='))) {
-  document.cookie = "answers=; Path=/; SameSite=None; Secure";
-}
+//initialise cookie
+document.cookie = "answers=; Path=; SameSite=None; Secure";
 
 // create a variable for the cookie answer
 var cookie_answer = [];
