@@ -196,25 +196,18 @@ function button2Function() {
     cookie_answer.push("B");
     document.cookie = "answers=" + cookie_answer.join(",");
 }
+	  
 function openbox() {
-      const openPopup = document.getElementById('button1');
           const closePopup = document.getElementById('closePopup');
           const box = document.getElementById('box');
 
-          openPopup.addEventListener('click', () => {
               box.style.display = 'flex';
-          });
 
           closePopup.addEventListener('click', () => {
               box.style.display = 'none';
 	      window.location.href = "email-2.html"
           });
 
-          window.addEventListener('click', (event) => {
-              if (event.target === box) {
-                  box.style.display = 'none';
-              }
-          }); 
   }
   function openbox2()	{	
   
