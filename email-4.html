@@ -202,83 +202,65 @@
 
 </div>
   
-<script>
+  <script>
 
-  // create a variable for the cookie answer
-  var cookie_answer = [];
+// create a variable for the cookie answer
+var cookie_answer = [];
+var cookie = document.cookie;
 
-  var cookie = document.cookie;
+//extract the cookie value into a dictionary
+var previousAnswers = cookie.split("=");
+	  
+//split the cookie value into each answer
+cookie_answer = previousAnswers[1].split(",");
 
-  //extract the cookie value into a dictionary
-  var previousAnswers = cookie.split("=");
+  document.getElementById("button1").addEventListener("click", () => {
+    console.log("Button 1 clicked");
+      button1Function(); 
+      openbox();         
+  });
+	  
+ document.getElementById("button2").addEventListener("click", () => {
+    console.log("Button 2 clicked");
+      button2Function(); 
+      openbox2();        
+  });
 
-  //split the cookie value into each answer
-  cookie_answer = previousAnswers[1].split(",");
-      
-      document.getElementById("button1")?.addEventListener("click", button1Function);
-      document.getElementById("button2")?.addEventListener("click", button2Function);
-      
-      function button1Function() {
-          cookie_answer.push("A");
-          document.cookie = "answers=" + cookie_answer.join(",");
-      }
-      
-      function button2Function() {
-          cookie_answer.push("B");
-          document.cookie = "answers=" + cookie_answer.join(",");
-      }
+function button1Function() {
+    cookie_answer.push("A");
+    document.cookie = "answers=" + cookie_answer.join(",");
+}
 
-  function hover_function() {
-    var box = document.getElementById("myPopup");
-    box.classList.toggle("show");
-  }
-
-  function openbox() {
-      const openPopup = document.getElementById('button1');
+function button2Function() {
+    cookie_answer.push("B");
+    document.cookie = "answers=" + cookie_answer.join(",");
+}
+	  
+function openbox() {
           const closePopup = document.getElementById('closePopup');
           const box = document.getElementById('box');
 
-          openPopup.addEventListener('click', () => {
-              box.style.display = 'flex';
-          });
+           box.style.display = 'flex';
 
           closePopup.addEventListener('click', () => {
               box.style.display = 'none';
-        document.getElementById('button1').style.visibility = 'hidden';
-        document.getElementById('button2').style.visibility = 'hidden';
-              document.getElementById('message').style.display = 'block';
+	      window.location.href = "email-2.html"
           });
 
-          window.addEventListener('click', (event) => {
-              if (event.target === box) {
-                  box.style.display = 'none';
-              }
-          });
   }
   function openbox2()	{	
-      const openPopup2 = document.getElementById('button2');
-          const closePopup2 = document.getElementById('closePopup2');
+  	  const closePopup2 = document.getElementById('closePopup2')
           const box2 = document.getElementById('box2');
-
-          openPopup2.addEventListener('click', () => {
-              box2.style.display = 'flex';
-          });
-
+	  
+	  box.style.display = 'flex';
+	  
           closePopup2.addEventListener('click', () => {
               box2.style.display = 'none';
-        document.getElementById('button1').style.visibility = 'hidden';
-        document.getElementById('button2').style.visibility = 'hidden';
-        document.getElementById('message').style.display = 'block';
-          });
-
-          window.addEventListener('click', (event) => {
-              if (event.target === box2) {
-                  box2.style.display = 'none';
-              }
+       	  window.location.href = "email-2.html"
           });
   }
-        
-</script>
+
+  </script>
 
   <div class="taskbar-buffer-div">
     <!--
