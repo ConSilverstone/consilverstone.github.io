@@ -129,7 +129,6 @@
   <!-- button-->
   <div class="button-cont">
     <div id="box" class="box">
-	
         <div class="box-content">
 		
 		<img src="/media/images/Tick.png" style="width:30px; height:30px; display:inline;">
@@ -161,72 +160,57 @@
 	<p>Answer has been submitted</p>
 
 </div>
-  <script>
+ <script>
+  
+  document.getElementById("button1")?.addEventListener("click", () => {
+      button1Function(); 
+      correctPopup();         
+  });
 
-// create a variable for the cookie answer
-var cookie_answer = [];
+  document.getElementById("button2")?.addEventListener("click", () => {
+      button2Function(); 
+      incorrectPopup();        
+  });
 
-document.getElementById("button1")?.addEventListener("click", button1Function, openbox1);
-document.getElementById("button2")?.addEventListener("click", button2Function, openbox2);
-
-function button1Function() {
-    cookie_answer.push("A");
-    document.cookie = "answers=" + cookie_answer.join(",");
-}
-
-function button2Function() {
-    cookie_answer.push("B");
-    document.cookie = "answers=" + cookie_answer.join(",");
-}
-function openbox() {
-      const openPopup = document.getElementById('button1');
-          const closePopup = document.getElementById('closePopup');
-          const box = document.getElementById('box');
-
-          openPopup.addEventListener('click', () => {
-              box.style.display = 'flex';
-          });
-
-          closePopup.addEventListener('click', () => {
-              box.style.display = 'none';
-        document.getElementById('button1').style.visibility = 'hidden';
-        document.getElementById('button2').style.visibility = 'hidden';
-              document.getElementById('message').style.display = 'block';
-	window.location.href = "email-2.html";
-          });
-
-          window.addEventListener('click', (event) => {
-              if (event.target === box) {
-                  box.style.display = 'none';
-              }
-          });
-  }
-  function openbox2()	{	
-      const openPopup2 = document.getElementById('button2');
-          const closePopup2 = document.getElementById('closePopup2');
-          const box2 = document.getElementById('box2');
-
-          openPopup2.addEventListener('click', () => {
-              box2.style.display = 'flex';
-          });
-
-          closePopup2.addEventListener('click', () => {
-              box2.style.display = 'none';
-        document.getElementById('button1').style.visibility = 'hidden';
-        document.getElementById('button2').style.visibility = 'hidden';
-        document.getElementById('message').style.display = 'block';
-	window.location.href = "email-2.html";
-          });
-
-          window.addEventListener('click', (event) => {
-              if (event.target === box2) {
-                  box2.style.display = 'none';
-              }
-          });
+  function button1Function() {
+      cookie_answer.push("A");
+      document.cookie = "answers=" + cookie_answer.join(",");
   }
 
-  </script>
+  function button2Function() {
+      cookie_answer.push("B");
+      document.cookie = "answers=" + cookie_answer.join(",");
+  }
 
+
+  function correctPopup() {
+      const box = document.getElementById('box');
+      box.style.display = 'flex'; 
+
+      const closePopup = document.getElementById('closePopup');
+      closePopup.addEventListener('click', () => {
+          box.style.display = 'none'; // Hide the popup
+          document.getElementById('button1').style.visibility = 'hidden';
+          document.getElementById('button2').style.visibility = 'hidden';
+          document.getElementById('message').style.display = 'block';
+          window.location.href = "email-2.html"; // Redirect to the next page
+      });
+  }
+
+  function incorrectPopup() {
+      const box2 = document.getElementById('box2');
+      box2.style.display = 'flex'; // Show the incorrect popup
+
+      const closePopup2 = document.getElementById('closePopup2');
+      closePopup2.addEventListener('click', () => {
+          box2.style.display = 'none'; // Hide the popup
+          document.getElementById('button1').style.visibility = 'hidden';
+          document.getElementById('button2').style.visibility = 'hidden';
+          document.getElementById('message').style.display = 'block';
+          window.location.href = "email-2.html"; // Redirect to the next page
+      });
+  }
+</script>
 <div class="taskbar-buffer-div">
   <!--
     Buffer div to keep the taskbar away from body elements.
