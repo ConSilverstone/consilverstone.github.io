@@ -123,14 +123,14 @@ body {
 /*/////////////////*/
 /* aside as achnor sidebar */
 .aside-1 {
-	/* Do not allow it to shrink to smaller than 300px, take a new line. */
+	/* Do not allow it to shrink to smaller than 400px, take a new line. */
 	min-width: 300px;
 	/* Should be no longer than 20% of screen */
 	max-width: 20%;
 	}
 .aside-email {
 		/* Do not allow it to shrink to smaller than 300px, take a new line. */
-		min-width: 300px;
+		min-width: 400px;
 		/* Should be no longer than 20% of screen */
 		max-width: 22%;
 }
