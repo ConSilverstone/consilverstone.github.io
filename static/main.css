@@ -130,9 +130,9 @@ body {
 	}
 .aside-email {
 		/* Do not allow it to shrink to smaller than 300px, take a new line. */
-		min-width: 400px;
+		min-width: 600px;
 		/* Should be no longer than 20% of screen */
-		max-width: 22%;
+		max-width: 10%;
 }
 /* Taskbar buffer to prevent hidding content behind the taskbar */
 .taskbar-buffer-div {
