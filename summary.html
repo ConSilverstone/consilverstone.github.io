@@ -204,7 +204,7 @@
     
 
   // Update the header with the total score
-  document.getElementById("score").textContent = `You scored ${totalScore}/${correctAnswers.length}`;
+  document.getElementById("score").innerHTML = `You scored ${totalScore}/${correctAnswers.length}`;
 
   // update email box when clicked
   document.getElementById("email-1").addEventListener("click", function() {
