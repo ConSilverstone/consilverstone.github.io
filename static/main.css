@@ -301,9 +301,10 @@ body {
 
 .button-cont {
     display: flex;
+    width: 100%;
     align-items: flex-start; 
     margin-left: 10px; 
-    gap: 20px; /
+    gap: 20px; 
 }
 
 .button {
