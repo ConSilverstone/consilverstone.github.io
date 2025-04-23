@@ -296,3 +296,20 @@ body {
   text-align: center;
 }
 /*end of the structuer of the boxes that appears when guessing the answer of the game */
+
+/* CSS for button configuration */
+
+.button-cont {
+    display: flex;
+    align-items: flex-start; 
+    margin-left: 10px; 
+    gap: 20px; /
+}
+
+.button {
+    width: 140px;
+    height: 50px;
+    padding: 8px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+}
