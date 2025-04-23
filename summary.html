@@ -77,17 +77,17 @@
             </tr>
             <tr>
               <td>3</td>
-              <td>URGENT</td>
+              <td>Account Info</td>
               <td><button id ="email-3" class="button button2">Check!</button></td>
             </tr>
             <tr>
               <td>4</td>
-              <td>PLACEHOLDER EMAIL</td>
+              <td>Holiday Photos</td>
               <td><button id ="email-4" class="button button2">Check!</button></td>
             </tr>
             <tr>
               <td>5</td>
-              <td>Christmas Party Planning</td>
+              <td>Party Planning</td>
               <td><button id ="email-5" class="button button2">Check!</button></td>
             </tr>
             <tr>
@@ -239,6 +239,48 @@
           <p>We apologise sincerely .</p>
           <p>Disaster recovery team</p>
         </div>   
+        `; });
+
+    document.getElementById("email-3").addEventListener("click", function() {
+      document.getElementById("email-box").innerHTML =  `
+      <div class="email-box">
+        <div class="email-header">
+          <div class="email-header-from">From: <span>donotreply@bankofscotland</span></div>
+          <div class="email-header-to">To: <span>customer</span></div>
+          <div class="email-header-date">Date: <span>Today</span></div>
+        </div>
+        <div class="email-body">
+          <p>Dear customer,</p>
+          <p>New information regarding how your account is managed is in your indox.</p>
+          <p>To view this infromation head over to the Royal bank of scotland Website or log into your mobile banking app.</p>
+          <p>For any queries head to the FAQ section of the website.</p>
+         
+          <p>Kind Regards</p>
+          <p>The Customer Service Team</p>
+        </div> 
+      </div>  
+        `; });
+
+    document.getElementById("email-4").addEventListener("click", function() {
+      document.getElementById("email-box").innerHTML =  `
+       <div class="email-box">
+        <div class="email-header">
+          <div class="email-header-from">From: <span>Mum@Gmail.com</span></div>
+          <div class="email-header-to">To: <span>You</span></div>
+          <div class="email-header-date">Date: <span>Yesterday</span></div>
+        </div>
+        <div class="email-body">
+          <p>Hi son,</p>
+          <p>Remember the family trip last year.<br>
+          This is a link to a selection of photos from the trip<br>
+          <a class="popup" onmouseover="hover_function()" onmouseout="hover_function()" href="">Photos
+          <span class="popuptext" id="myPopup">HTTPS://Photos.tinyurl.com</span>
+          </a></p>
+         
+          <p>From</p>
+          <p>Mum</p>
+        </div> 
+      </div>   
         `; });
 
       
